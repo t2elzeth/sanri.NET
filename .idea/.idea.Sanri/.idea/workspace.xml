@@ -37,7 +37,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -103,7 +103,7 @@
       <updated>1636715120966</updated>
       <workItem from="1636715125471" duration="79000" />
       <workItem from="1636715235948" duration="2621000" />
-      <workItem from="1636898440726" duration="3863000" />
+      <workItem from="1636898440726" duration="5141000" />
     </task>
     <servers />
   </component>
