@@ -1,14 +1,18 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NHibernate;
 using Sanri.Models;
+using Sanri.Services;
+using Sanri.Services.Products;
 
 namespace Sanri.Controllers
 {
     [ApiController]
     [Route("products")]
-    public class ProductsController
+    public class ProductsController: Controller
     {
         private readonly ISessionFactory _sessionFactory;
 
@@ -18,12 +22,12 @@ namespace Sanri.Controllers
         }
         
         [HttpGet]
-        public IList<ProductModel> Get()
+        public IList<Product> Get()
         {
             using var session = _sessionFactory.OpenSession();
-            var products = session.Query<ProductModel>().ToList();
+            var products = session.Query<Product>().ToList();
 
-            return products.Select(product => new ProductModel()
+            return products.Select(product => new Product()
             {
                 Id = product.Id,
                 Name = product.Name,
@@ -32,21 +36,9 @@ namespace Sanri.Controllers
         }
 
         [HttpPost]
-        public ProductModel Post([FromBody] ProductModel productData)
+        public Product Post([FromBody] ProductCreate productData, [FromServices] CreateProductService productService)
         {
-            using var session = _sessionFactory.OpenSession();
-            using var transaction = session.BeginTransaction();
-
-            var product = new ProductModel()
-            {
-                Name = productData.Name,
-                Price = productData.Price
-            };
-            
-            session.SaveOrUpdate(product);
-            transaction.Commit();
-
-            return product;
+            return productService.Execute(productData);
         }
     }
 }

@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Sanri.Services;
+using Sanri.Services.Products;
 
 namespace Sanri
 {
@@ -34,6 +36,7 @@ namespace Sanri
 
             services.AddControllers();
             services.AddSingleton(NhSessionFactory.Instance);
+            services.AddSingleton<CreateProductService>();
             
             services.AddSwaggerGen(c => //
             {

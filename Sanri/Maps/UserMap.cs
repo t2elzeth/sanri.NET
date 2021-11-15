@@ -3,7 +3,7 @@ using Sanri.Models;
 
 namespace Sanri.Maps
 {
-    public class UserMap: ClassMap<UserModel>
+    public class UserMap: ClassMap<User>
     {
         public UserMap()
         {

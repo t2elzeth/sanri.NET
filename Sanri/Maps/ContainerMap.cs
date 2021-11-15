@@ -3,7 +3,7 @@ using Sanri.Models;
 
 namespace Sanri.Maps
 {
-    public class ContainerMap : ClassMap<ContainerModel>
+    public class ContainerMap : ClassMap<Container>
     {
         public ContainerMap()
         {

@@ -8,9 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ac2d189-0c0a-46e7-8351-c580a9f14eef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Sanri/Services/IService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri/Services/Products/CreateProductService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sanri/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sanri/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sanri/Controllers/ContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Controllers/ContainerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Conventions/IdConvention.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Conventions/IdConvention.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Controllers/ProductsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri/Maps/ContainerMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Maps/ContainerMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri/Maps/ProductMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Maps/ProductMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri/Maps/UserMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Maps/UserMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri/Models/ContainerModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Models/Container.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri/Models/ProductModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Models/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri/Models/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sanri/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,12 +66,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34971997" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="C#" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -173,6 +185,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
