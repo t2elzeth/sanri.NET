@@ -1,6 +1,6 @@
 namespace Sanri.Models
 {
-    public class User
+    public class UserModel
     {
         public virtual long Id { get; set; }
         public virtual string FullName { get; set; }

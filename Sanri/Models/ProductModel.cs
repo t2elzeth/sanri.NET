@@ -1,6 +1,6 @@
 namespace Sanri.Models
 {
-    public class Product
+    public class ProductModel
     {
         public virtual long Id { get; set; }
         public virtual string Name { get; set; }

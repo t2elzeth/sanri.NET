@@ -18,12 +18,12 @@ namespace Sanri.Controllers
         }
         
         [HttpGet]
-        public IList<Product> Get()
+        public IList<ProductModel> Get()
         {
             using var session = _sessionFactory.OpenSession();
-            var products = session.Query<Product>().ToList();
+            var products = session.Query<ProductModel>().ToList();
 
-            return products.Select(product => new Product()
+            return products.Select(product => new ProductModel()
             {
                 Id = product.Id,
                 Name = product.Name,
@@ -32,12 +32,12 @@ namespace Sanri.Controllers
         }
 
         [HttpPost]
-        public Product Post([FromBody] Product productData)
+        public ProductModel Post([FromBody] ProductModel productData)
         {
             using var session = _sessionFactory.OpenSession();
             using var transaction = session.BeginTransaction();
 
-            var product = new Product()
+            var product = new ProductModel()
             {
                 Name = productData.Name,
                 Price = productData.Price

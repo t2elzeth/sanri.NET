@@ -11,17 +11,17 @@ namespace Sanri.Controllers
     public class ContainerController : Controller
     {
         [HttpGet]
-        public IList<Container> Get([FromServices] ISessionFactory sessionFactory)
+        public IList<ContainerModel> Get([FromServices] ISessionFactory sessionFactory)
         {
             using var session = sessionFactory.OpenSession();
-            var containers = session.Query<Container>().ToList();
+            var containers = session.Query<ContainerModel>().ToList();
             
-            return containers.Select(c => new Container()
+            return containers.Select(c => new ContainerModel()
             {
                 Id = c.Id,
                 Name = c.Name,
                 DateOfSending = c.DateOfSending,
-                Client = new User()
+                Client = new UserModel()
                 {
                     Id = c.Client.Id,
                     FullName = c.Client.FullName
