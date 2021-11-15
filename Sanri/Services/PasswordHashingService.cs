@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Identity;
 using Sanri.Models;
 
@@ -12,7 +11,7 @@ namespace Sanri.Services
         {
             _hasher = new PasswordHasher<User>();
         }
-        
+
         public string Generate(User user, string providedPassword)
         {
             return _hasher.HashPassword(user, providedPassword);
