@@ -1,12 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using NHibernate;
-using NHibernate.Context;
 using Sanri.Models;
 
 namespace Sanri.Controllers

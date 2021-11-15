@@ -1,4 +1,3 @@
-using System;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
 using Humanizer;
@@ -11,7 +10,7 @@ namespace Sanri.Conventions
         {
             if (string.IsNullOrEmpty(instance.GeneratedBy.Class))
             {
-                var tableName    = instance.EntityType.Name.Pluralize().Underscore();
+                var tableName = instance.EntityType.Name.Pluralize().Underscore();
                 var columnName = instance.Name.Underscore();
 
                 instance.GeneratedBy.Sequence($"{tableName}_{columnName}_seq");
