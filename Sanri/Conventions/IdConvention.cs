@@ -13,7 +13,7 @@ namespace Sanri.Conventions
             {
                 var tableName    = instance.EntityType.Name.Pluralize().Underscore();
                 var columnName = instance.Name.Underscore();
-                Console.WriteLine(tableName);
+
                 instance.GeneratedBy.Sequence($"{tableName}_{columnName}_seq");
 
                 instance.UnsavedValue("0");
