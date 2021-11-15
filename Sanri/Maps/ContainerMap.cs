@@ -11,7 +11,7 @@ namespace Sanri.Maps
             
             Id(x => x.Id);
             Map(x => x.Name);
-            Map(x => x.DateOfSending);
+            Map(x => x.DateOfSending); //date_of_sending
             References(x => x.Client);
         }
     }

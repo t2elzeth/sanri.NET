@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Sanri
 {
@@ -13,14 +10,22 @@ namespace Sanri
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
-        }
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
+                .AddJsonFile("appsettings.json");
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            var configuration = builder.Build();
+
+            ConnectionStringsManager.ReadFromConfiguration(configuration);
+            
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseConfiguration(configuration);
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+                .Build()
+                .Run();
+        }
     }
 }

@@ -1,10 +1,7 @@
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using NHibernate.Context;
+using NHibernate;
 using Sanri.Models;
 
 namespace Sanri.Controllers
@@ -13,23 +10,17 @@ namespace Sanri.Controllers
     [Route("products")]
     public class ProductsController
     {
+        private readonly ISessionFactory _sessionFactory;
+
+        public ProductsController(ISessionFactory sessionFactory)
+        {
+            _sessionFactory = sessionFactory;
+        }
+        
         [HttpGet]
         public IList<Product> Get()
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
-                .AddJsonFile("appsettings.json");
-
-            var configuration = builder.Build();
-
-            ConnectionStringsManager.ReadFromConfiguration(configuration);
-
-            var sessionFactory = new SessionFactoryBuilder()
-                .CurrentSessionContext<AsyncLocalSessionContext>()
-                .AddFluentMappingsFrom("Sanri")
-                .Build();
-
-            using var session = sessionFactory.OpenSession();
+            using var session = _sessionFactory.OpenSession();
             var products = session.Query<Product>().ToList();
 
             return products.Select(product => new Product()
@@ -43,20 +34,7 @@ namespace Sanri.Controllers
         [HttpPost]
         public Product Post([FromBody] Product productData)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
-                .AddJsonFile("appsettings.json");
-
-            var configuration = builder.Build();
-
-            ConnectionStringsManager.ReadFromConfiguration(configuration);
-
-            var sessionFactory = new SessionFactoryBuilder()
-                .CurrentSessionContext<AsyncLocalSessionContext>()
-                .AddFluentMappingsFrom("Sanri")
-                .Build();
-
-            using var session = sessionFactory.OpenSession();
+            using var session = _sessionFactory.OpenSession();
             using var transaction = session.BeginTransaction();
 
             var product = new Product()
