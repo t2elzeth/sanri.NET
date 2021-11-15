@@ -8,19 +8,157 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ac2d189-0c0a-46e7-8351-c580a9f14eef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Sanri/Services/IService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sanri/Services/Products/CreateProductService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/AppFaker/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/Sanri.Tests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/TestServices/TestPasswordGeneratorService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Antlr3.Runtime.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/CoverletSourceRootsMapping" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Faker.Net.5.0.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/FluentNHibernate.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Humanizer.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Iesi.Collections.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.DotNet.InternalAbstractions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.Extensions.Configuration.Abstractions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.Extensions.Configuration.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.Extensions.Primitives.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.OpenApi.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.TestPlatform.CommunicationUtilities.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.TestPlatform.CoreUtilities.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.TestPlatform.CrossPlatEngine.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.TestPlatform.PlatformAbstractions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.TestPlatform.Utilities.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.VisualStudio.TestPlatform.Common.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/NHibernate.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/NUnit3.TestAdapter.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/NUnit3.TestAdapter.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Newtonsoft.Json.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Npgsql.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/NuGet.Frameworks.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Remotion.Linq.EagerFetching.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Remotion.Linq.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.Tests.deps.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.Tests.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.Tests.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.Tests.runtimeconfig.dev.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.Tests.runtimeconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.deps.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.runtimeconfig.dev.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Sanri.runtimeconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/System.Xml.XPath.XmlDocument.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/de-DE/Faker.Net.5.0.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/de/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/es/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/it/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/nunit.engine.api.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/nunit.engine.core.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/nunit.engine.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/nunit.framework.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ref/Sanri.Tests.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/testhost.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/bin/Debug/net5.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.AssemblyInfoInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.assets.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.csproj.CopyComplete" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.genruntimeconfig.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/Sanri.Tests.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Debug/net5.0/ref/Sanri.Tests.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Sanri.Tests.csproj.nuget.dgspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Sanri.Tests.csproj.nuget.g.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/Sanri.Tests.csproj.nuget.g.targets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/project.assets.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/project.nuget.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/project.packagespec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.Tests/obj/rider.project.restore.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sanri/Services/PasswordHashingService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Sanri/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sanri/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Playground/obj/Debug/net5.0/Playground.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Playground/obj/Debug/net5.0/Playground.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Playground/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Playground/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sanri.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Controllers/ContainerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Controllers/ContainerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Controllers/ProductsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Maps/ContainerMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Maps/ContainerMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Maps/ProductMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Maps/ProductMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Maps/UserMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Maps/UserMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Models/ContainerModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Models/Container.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Models/ProductModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Models/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Models/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sanri/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sanri/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,16 +181,20 @@
     <setting file="file://$PROJECT_DIR$/Sanri/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8286005e053f476a9053bdc30c5df87f83200/C4/IdMapping.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sanri/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56840b12931c4c33b2e2f9051066af4a15400/35/53d09f0c/Name.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c374d4eca9854946a88b10fe7fab7e3144e68/30/InflectorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sanri/Controllers/ProductsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8286005e053f476a9053bdc30c5df87f83200/73/AttributeStore.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8286005e053f476a9053bdc30c5df87f83200/C8/AttributeLayeredValues.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/88f6369d483b45488aabeba435cbcbf37bc00/7b/a5e18464/RegexCache.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0eda82af16334dc381885d41f6a9628a65c00/c7/08e2b487/PasswordVerificationResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sanri/NhSessionFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b678ed0432a94db0ba0e51a0809301698d7e00/b3/827a83bc/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sanri/SessionFactoryBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56840b12931c4c33b2e2f9051066af4a15400/d0/04f96485/Internet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8286005e053f476a9053bdc30c5df87f83200/199/FluentConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b678ed0432a94db0ba0e51a0809301698d7e00/29/d822eeae/NonRandomizedStringEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb6b23b5581d4ab798055b57b3fd8d8674e00/6/Assert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sanri/Conventions/IdConvention.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b678ed0432a94db0ba0e51a0809301698d7e00/27/1dcc55dd/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sanri/Controllers/ContainerController.cs" root0="FORCE_HIGHLIGHTING" />
