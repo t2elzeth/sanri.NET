@@ -1,7 +1,7 @@
 using FluentNHibernate.Mapping;
-using Sanri.Application.Models;
+using Sanri.API.Models;
 
-namespace Sanri.Application.Maps
+namespace Sanri.API.Maps
 {
     public class UserMap: ClassMap<User>
     {

@@ -1,7 +1,8 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using NHibernate;
 using Sanri.API.DTOs;
-using Sanri.Application;
+using Sanri.API.Models;
 
 namespace Sanri.API.Controllers
 {
@@ -9,17 +10,29 @@ namespace Sanri.API.Controllers
     [Route("signup")]
     public class SignUpController
     {
-        private readonly CreateUserHandler _createUserHandler;
+        private readonly ISessionFactory _sessionFactory;
 
-        public SignUpController(CreateUserHandler createUserHandler)
+        public SignUpController(ISessionFactory sessionFactory)
         {
-            _createUserHandler = createUserHandler;
+            _sessionFactory = sessionFactory;
         }
         
         [HttpPost]
         public UserDTO Post([FromBody] SignUpDTO payload)
         {
-            var user = _createUserHandler.Execute();
+
+            var session     = _sessionFactory.OpenSession();
+            var transaction = session.BeginTransaction();
+
+            var user = new User
+            {
+                Username = "t2elzeth",
+                Password = "admin12345"
+            };
+            
+            session.SaveOrUpdate(user);
+            
+            transaction.Commit();
 
             return new UserDTO
             {

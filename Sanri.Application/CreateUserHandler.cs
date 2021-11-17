@@ -8,8 +8,8 @@ namespace Sanri.Application
         {
             return new User
             {
-                Id       = 2,
-                Username = "t2elzeth"
+                Username = "t2elzeth",
+                Password = "admin12345"
             };
         }
     }
