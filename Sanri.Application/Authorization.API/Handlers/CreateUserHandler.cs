@@ -1,7 +1,8 @@
 using System.Threading.Tasks;
+using Sanri.Application.Authorization.API.Repositories;
 using Sanri.Core.Models;
 
-namespace Sanri.Application
+namespace Sanri.Application.Authorization.API.Handlers
 {
     public class CreateUserCommand
     {

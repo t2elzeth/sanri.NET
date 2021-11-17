@@ -5,7 +5,7 @@ using Commons.Nh;
 using Dapper;
 using Sanri.Core.Models;
 
-namespace Sanri.Application
+namespace Sanri.Application.Authorization.API.Repositories
 {
     public class UserRepository
     {

@@ -1,4 +1,4 @@
-namespace Sanri.API.DTOs
+namespace Sanri.API.Authorization.API.DTOs
 {
     public class UserResponse
     {

@@ -1,6 +1,8 @@
 using Autofac;
+using Sanri.Application.Authorization.API.Handlers;
+using Sanri.Application.Authorization.API.Repositories;
 
-namespace Sanri.Application
+namespace Sanri.Application.Authorization.API
 {
     public class CompositionRoot : Module
     {

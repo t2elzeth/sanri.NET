@@ -1,7 +1,7 @@
 using FluentNHibernate.Mapping;
 using Sanri.Core.Models;
 
-namespace Sanri.Application.Maps
+namespace Sanri.Application.Authorization.API.Maps
 {
     public class UserMap : ClassMap<User>
     {

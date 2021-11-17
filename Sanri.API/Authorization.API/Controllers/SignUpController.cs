@@ -1,10 +1,11 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Sanri.API.DTOs;
+using Sanri.API.Authorization.API.DTOs;
 using Sanri.Application;
+using Sanri.Application.Authorization.API.Handlers;
 using Sanri.Application.Nh;
 
-namespace Sanri.API.Controllers
+namespace Sanri.API.Authorization.API.Controllers
 {
     [ApiController]
     [Route("signup")]
