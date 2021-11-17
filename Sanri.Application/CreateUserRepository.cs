@@ -1,5 +1,8 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Commons.Nh;
+using Dapper;
 using Sanri.API.Models;
 
 namespace Sanri.Application
@@ -15,6 +18,25 @@ namespace Sanri.Application
             await nhSession.SaveOrUpdateAsync(user);
 
             return user;
+        }
+
+        public async Task<IList<User>> GetAll()
+        {
+            const string sql = @"
+select username 
+from public.users;
+";
+            // var parameters = new
+            // {
+            //     category
+            // };
+
+            var databaseSession = NhDatabaseSession.Current;
+            var connection      = databaseSession.Connection;
+
+            var rows = await connection.QueryAsync<User>(sql);
+
+            return rows.ToList();
         }
     }
 }
