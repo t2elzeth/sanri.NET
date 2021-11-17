@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Sanri.API.Models;
+using Sanri.Core.Models;
 
 namespace Sanri.Application
 {

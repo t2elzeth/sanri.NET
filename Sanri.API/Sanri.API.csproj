@@ -24,4 +24,8 @@
       <ProjectReference Include="..\Sanri.Application\Sanri.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Authorization.API" />
+    </ItemGroup>
+
 </Project>

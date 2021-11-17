@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Commons.Nh;
 using Dapper;
-using Sanri.API.Models;
+using Sanri.Core.Models;
 
 namespace Sanri.Application
 {

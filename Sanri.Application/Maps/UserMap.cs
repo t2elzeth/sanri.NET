@@ -1,5 +1,5 @@
 using FluentNHibernate.Mapping;
-using Sanri.API.Models;
+using Sanri.Core.Models;
 
 namespace Sanri.Application.Maps
 {

@@ -1,4 +1,4 @@
-namespace Sanri.API.Models
+namespace Sanri.Core.Models
 {
     public class User
     {
