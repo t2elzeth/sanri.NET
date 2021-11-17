@@ -38,15 +38,15 @@ namespace Sanri.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<ProductDTO> Post([FromBody] CreateProductDTO productData)
+        public ActionResult<ProductDTO> Post([FromBody] CreateProductDTO productPayload)
         {
-            var productResult = _createProductService.Execute(productData);
+            var product = _createProductService.Execute(productPayload);
 
             var productDTO = new ProductDTO
             {
-                Id    = productResult.Value.Id,
-                Name  = productResult.Value.Name,
-                Price = productResult.Value.Price.Value
+                Id    = product.Id,
+                Name  = product.Name,
+                Price = product.Price.Value
             };
 
             return productDTO;

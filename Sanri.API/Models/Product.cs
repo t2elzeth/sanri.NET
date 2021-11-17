@@ -1,8 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.Data;
-using FluentValidation;
-using Sanri.API.Validation;
-
 namespace Sanri.API.Models
 {
     public class Product

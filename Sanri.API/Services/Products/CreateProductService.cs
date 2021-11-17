@@ -14,7 +14,7 @@ namespace Sanri.API.Services.Products
             _sessionFactory = sessionFactory;
         }
 
-        public SystemResult<Product> Execute(CreateProductDTO productData)
+        public Product Execute(CreateProductDTO productData)
         {
             using var session     = _sessionFactory.OpenSession();
             using var transaction = session.BeginTransaction();
