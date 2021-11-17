@@ -1,7 +1,6 @@
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Context;
-using Sanri.API;
 
 namespace Sanri.Application.Nh
 {
