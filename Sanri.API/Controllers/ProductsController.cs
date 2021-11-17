@@ -5,7 +5,6 @@ using NHibernate;
 using Sanri.API.DTOs;
 using Sanri.API.Models;
 using Sanri.API.Services.Products;
-using Sanri.API.Validation;
 
 namespace Sanri.API.Controllers
 {
@@ -39,19 +38,18 @@ namespace Sanri.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Product> Post([FromBody] ProductCreate productData)
+        public ActionResult<ProductDTO> Post([FromBody] CreateProductDTO productData)
         {
             var productResult = _createProductService.Execute(productData);
-            
-            return Result(productResult);
-        }
 
-        private ActionResult<T> Result<T>(SystemResult<T> result)
-        {
-            if (result.IsFailure)
-                return BadRequest(result.Error);
+            var productDTO = new ProductDTO
+            {
+                Id    = productResult.Value.Id,
+                Name  = productResult.Value.Name,
+                Price = productResult.Value.Price.Value
+            };
 
-            return result.Value;
+            return productDTO;
         }
     }
 }

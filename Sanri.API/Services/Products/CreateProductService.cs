@@ -1,4 +1,5 @@
 using NHibernate;
+using Sanri.API.DTOs;
 using Sanri.API.Models;
 using Sanri.API.Validation;
 
@@ -13,12 +14,8 @@ namespace Sanri.API.Services.Products
             _sessionFactory = sessionFactory;
         }
 
-        public SystemResult<Product> Execute(ProductCreate productData)
+        public SystemResult<Product> Execute(CreateProductDTO productData)
         {
-            var priceResult = Price.Create(productData.Price);
-            if (priceResult.IsFailure)
-                return new SystemError("price", priceResult.Error);
-
             using var session     = _sessionFactory.OpenSession();
             using var transaction = session.BeginTransaction();
 

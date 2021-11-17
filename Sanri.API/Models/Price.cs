@@ -25,13 +25,13 @@ namespace Sanri.API.Models
         {
             if (string.IsNullOrEmpty(value))
                 return Result.Failure<Price, string>("Price is null");
-            
+
             if (!decimal.TryParse(value, out var price))
                 return Result.Failure<Price, string>("Enter value");
 
             return Create(price);
-        } 
-        
+        }
+
         public static Result<Price, string> Create(decimal price)
         {
             if (price < 0.01m)
@@ -39,7 +39,7 @@ namespace Sanri.API.Models
 
             return new Price(price);
         }
-        
+
         public static implicit operator Price(decimal value)
         {
             return Create(value).Value;
