@@ -4,4 +4,10 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FluentNHibernate" Version="3.1.0" />
+      <PackageReference Include="Humanizer.Core" Version="2.11.10" />
+      <PackageReference Include="NHibernate" Version="5.3.10" />
+    </ItemGroup>
+
 </Project>

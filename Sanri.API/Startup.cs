@@ -9,8 +9,8 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Sanri.API.Extensions;
-using Sanri.API.Services.Products;
 using Sanri.API.Validation;
+using Sanri.Application;
 
 namespace Sanri.API
 {
@@ -48,7 +48,7 @@ namespace Sanri.API
 
             services.AddControllers();
             services.AddSingleton(NhSessionFactory.Instance);
-            services.AddSingleton<CreateProductService>();
+            services.AddSingleton<CreateUserHandler>();
 
             services.AddSwaggerGen(c => //
             {

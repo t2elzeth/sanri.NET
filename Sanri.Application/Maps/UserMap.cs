@@ -1,7 +1,7 @@
 using FluentNHibernate.Mapping;
-using Sanri.API.Models;
+using Sanri.Application.Models;
 
-namespace Sanri.API.Maps
+namespace Sanri.Application.Maps
 {
     public class UserMap: ClassMap<User>
     {
@@ -10,7 +10,7 @@ namespace Sanri.API.Maps
             Schema("public");
             
             Id(x => x.Id);
-            Map(x => x.FullName);
+            Map(x => x.Username);
         }
     }
 }
