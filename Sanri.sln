@@ -1,10 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri", "Sanri\Sanri.csproj", "{A974FDA9-05A3-47A7-978F-6A691EF9D075}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.API", "Sanri.API\Sanri.API.csproj", "{A974FDA9-05A3-47A7-978F-6A691EF9D075}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{C3EAE9BF-E966-4425-A1D5-587BE2502EB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Tests", "Sanri.Tests\Sanri.Tests.csproj", "{4A599B14-73A8-4AC9-82E8-2C563B2FD0ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Core", "Sanri.Core\Sanri.Core.csproj", "{70FB4F08-E5EA-48E9-862C-DDF037DD22D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Application", "Sanri.Application\Sanri.Application.csproj", "{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +28,13 @@ Global
 		{4A599B14-73A8-4AC9-82E8-2C563B2FD0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A599B14-73A8-4AC9-82E8-2C563B2FD0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A599B14-73A8-4AC9-82E8-2C563B2FD0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70FB4F08-E5EA-48E9-862C-DDF037DD22D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70FB4F08-E5EA-48E9-862C-DDF037DD22D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70FB4F08-E5EA-48E9-862C-DDF037DD22D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70FB4F08-E5EA-48E9-862C-DDF037DD22D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

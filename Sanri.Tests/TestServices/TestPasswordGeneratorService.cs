@@ -1,6 +1,6 @@
 using NUnit.Framework;
-using Sanri.Models;
-using Sanri.Services;
+using Sanri.API.Models;
+using Sanri.API.Services;
 
 namespace Sanri.Tests.TestServices
 {
