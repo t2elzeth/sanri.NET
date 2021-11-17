@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Commons.DataAccess;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions;
@@ -8,10 +9,10 @@ using FluentNHibernate.Conventions.Helpers;
 using NHibernate;
 using NHibernate.Context;
 using NHibernate.Dialect;
-using Sanri.API.Conventions;
+using Sanri.Application.Nh.Conventions;
 using Configuration = NHibernate.Cfg.Configuration;
 
-namespace Sanri.API
+namespace Sanri.Application.Nh
 {
     public class SessionFactoryBuilder
     {

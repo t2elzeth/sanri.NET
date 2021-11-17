@@ -1,8 +1,9 @@
 using NHibernate;
+using NHibernate.Cfg;
 using NHibernate.Context;
-using Sanri.API.Nh;
+using Sanri.API;
 
-namespace Sanri.API
+namespace Sanri.Application.Nh
 {
     public static class NhSessionFactory
     {
@@ -12,8 +13,9 @@ namespace Sanri.API
         {
             Instance = new SessionFactoryBuilder()
                 .CurrentSessionContext<AsyncLocalSessionContext>()
-                .Use(new UserTypesConvention())
-                .AddFluentMappingsFrom("Sanri.API")
+                // .Use(new UserTypesConvention())
+                .AddFluentMappingsFrom("Sanri.Application")
+                .ExposeConfiguration(cfg => cfg.SetProperty(Environment.Hbm2ddlKeyWords, "none"))
                 .Build();
         }
     }

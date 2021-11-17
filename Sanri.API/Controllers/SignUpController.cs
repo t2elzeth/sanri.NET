@@ -1,8 +1,8 @@
-using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using NHibernate;
 using Sanri.API.DTOs;
-using Sanri.API.Models;
+using Sanri.Application;
+using Sanri.Application.Nh;
 
 namespace Sanri.API.Controllers
 {
@@ -10,35 +10,31 @@ namespace Sanri.API.Controllers
     [Route("signup")]
     public class SignUpController
     {
-        private readonly ISessionFactory _sessionFactory;
+        private readonly CreateUserHandler _createUserHandler;
 
-        public SignUpController(ISessionFactory sessionFactory)
+        public SignUpController(CreateUserHandler createUserHandler)
         {
-            _sessionFactory = sessionFactory;
+            _createUserHandler = createUserHandler;
         }
-        
-        [HttpPost]
-        public UserDTO Post([FromBody] SignUpDTO payload)
+
+        [HttpPost, NhSession]
+        public async Task<ActionResult<UserResponse>> Post([FromBody] SignUpRequest request)
         {
-
-            var session     = _sessionFactory.OpenSession();
-            var transaction = session.BeginTransaction();
-
-            var user = new User
+            var command = new CreateUserCommand
             {
-                Username = "t2elzeth",
-                Password = "admin12345"
+                Username = request.Username,
+                Password = request.Password
             };
-            
-            session.SaveOrUpdate(user);
-            
-            transaction.Commit();
 
-            return new UserDTO
+            var user = await _createUserHandler.Handle(command);
+
+            var response = new UserResponse
             {
                 Id       = user.Id,
                 Username = user.Username
             };
+
+            return response;
         }
     }
 }

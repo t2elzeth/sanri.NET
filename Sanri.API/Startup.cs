@@ -1,4 +1,5 @@
 using System.Reflection;
+using Autofac;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +11,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Sanri.API.Extensions;
 using Sanri.API.Validation;
+using Sanri.Application.Nh;
 
 namespace Sanri.API
 {
@@ -27,7 +29,7 @@ namespace Sanri.API
             // Enable CORS
             services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); });
 
-            services.AddMvcCore()
+            services.AddMvcCore(options => { options.Filters.Add<NhSessionAttributeActionFilter>(); })
                     .UseCustomModelValidation()
                     .AddFluentValidation(config =>
                     {
@@ -46,7 +48,6 @@ namespace Sanri.API
                                            options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
             services.AddControllers();
-            services.AddSingleton(NhSessionFactory.Instance);
 
             services.AddSwaggerGen(c => //
             {
@@ -54,6 +55,11 @@ namespace Sanri.API
             });
         }
 
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterAssemblyModules(Assembly.Load("Sanri.Application"));
+        }
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

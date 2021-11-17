@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace Sanri.API.DTOs
 {
-    public class SignUpDTO
+    public class SignUpRequest
     {
         public string Username { get; set; }
 
@@ -10,7 +10,7 @@ namespace Sanri.API.DTOs
 
         public string ConfirmPassword { get; set; }
 
-        public class Validator : AbstractValidator<SignUpDTO>
+        public class Validator : AbstractValidator<SignUpRequest>
         {
             public Validator()
             {

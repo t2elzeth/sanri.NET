@@ -3,7 +3,7 @@ using FluentNHibernate.Conventions.AcceptanceCriteria;
 using FluentNHibernate.Conventions.Inspections;
 using FluentNHibernate.Conventions.Instances;
 
-namespace Sanri.API.Conventions
+namespace Sanri.Application.Nh.Conventions
 {
     public class EnumConvention : IUserTypeConvention
     {

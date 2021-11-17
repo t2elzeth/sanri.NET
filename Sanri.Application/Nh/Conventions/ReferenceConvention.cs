@@ -3,7 +3,7 @@ using FluentNHibernate.Conventions.Instances;
 using FluentNHibernate.Mapping;
 using Humanizer;
 
-namespace Sanri.API.Conventions
+namespace Sanri.Application.Nh.Conventions
 {
     public class ReferenceConvention : IReferenceConvention
     {

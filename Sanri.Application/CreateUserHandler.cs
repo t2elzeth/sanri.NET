@@ -1,16 +1,33 @@
-using Sanri.Application.Models;
+using System.Threading.Tasks;
+using Sanri.API.Models;
 
 namespace Sanri.Application
 {
+    public class CreateUserCommand
+    {
+        public string Username { get; set; }
+        
+        public string Password { get; set; }
+    }
+    
     public class CreateUserHandler
     {
-        public User Execute()
+        private readonly UserRepository _userRepository;
+
+        public CreateUserHandler(UserRepository userRepository)
         {
-            return new User
+            _userRepository = userRepository;
+        }
+
+        public async Task<User> Handle(CreateUserCommand command)
+        {
+            var user = new User
             {
-                Username = "t2elzeth",
-                Password = "admin12345"
+                Username = command.Username,
+                Password = command.Password
             };
+
+            return await _userRepository.Save(user);
         }
     }
 }
