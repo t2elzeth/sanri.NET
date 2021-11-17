@@ -1,7 +1,6 @@
 using NHibernate;
 using Sanri.API.DTOs;
 using Sanri.API.Models;
-using Sanri.API.Validation;
 
 namespace Sanri.API.Services.Products
 {
