@@ -14,8 +14,11 @@ namespace Sanri.Application.Authorization.API.Repositories
         {
             var databaseSession = NhDatabaseSession.Current;
             var nhSession       = databaseSession.Session;
+            var transaction     = nhSession.BeginTransaction();
 
             await nhSession.SaveOrUpdateAsync(user);
+            
+            transaction.Commit();
 
             return user;
         }
