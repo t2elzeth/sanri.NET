@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using FluentValidation.Internal;
 
-namespace Sanri.API.Extensions
+namespace Sanri.API.Validation.Extensions
 {
     public class CamelCasePropertyNameResolver
     {
