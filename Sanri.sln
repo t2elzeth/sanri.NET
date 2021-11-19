@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Core", "Sanri.Core\Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Application", "Sanri.Application\Sanri.Application.csproj", "{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Infrastructure", "Sanri.Infrastructure\Sanri.Infrastructure.csproj", "{82E87425-B9D8-4F14-BD33-18C6D09FFF5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82E87425-B9D8-4F14-BD33-18C6D09FFF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E87425-B9D8-4F14-BD33-18C6D09FFF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E87425-B9D8-4F14-BD33-18C6D09FFF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E87425-B9D8-4F14-BD33-18C6D09FFF5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

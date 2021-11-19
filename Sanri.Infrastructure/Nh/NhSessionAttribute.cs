@@ -4,7 +4,7 @@ using Commons.Nh;
 using Microsoft.AspNetCore.Mvc.Filters;
 using NHibernate;
 
-namespace Sanri.Application.Nh
+namespace Sanri.Infrastructure.Nh
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
     public class NhSessionAttribute : Attribute

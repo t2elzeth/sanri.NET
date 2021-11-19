@@ -1,9 +1,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Sanri.API.Authorization.API.DTOs;
-using Sanri.Application;
 using Sanri.Application.Authorization.API.Handlers;
-using Sanri.Application.Nh;
+using Sanri.Infrastructure.Nh;
 
 namespace Sanri.API.Authorization.API.Controllers
 {

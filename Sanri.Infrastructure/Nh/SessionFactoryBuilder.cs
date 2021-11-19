@@ -9,10 +9,10 @@ using FluentNHibernate.Conventions.Helpers;
 using NHibernate;
 using NHibernate.Context;
 using NHibernate.Dialect;
-using Sanri.Application.Nh.Conventions;
+using Sanri.Infrastructure.Nh.Conventions;
 using Configuration = NHibernate.Cfg.Configuration;
 
-namespace Sanri.Application.Nh
+namespace Sanri.Infrastructure.Nh
 {
     public class SessionFactoryBuilder
     {

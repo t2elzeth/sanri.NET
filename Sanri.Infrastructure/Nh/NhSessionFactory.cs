@@ -1,8 +1,8 @@
+using Commons.Nh.Contexts;
 using NHibernate;
 using NHibernate.Cfg;
-using NHibernate.Context;
 
-namespace Sanri.Application.Nh
+namespace Sanri.Infrastructure.Nh
 {
     public static class NhSessionFactory
     {
