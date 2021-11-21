@@ -48,6 +48,7 @@ namespace Sanri.API
                                            options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddSwaggerGen(c => //
             {
