@@ -11,20 +11,20 @@ namespace Sanri.API.Authorization.API.Controllers
     [Route("signup")]
     public class SignUpController
     {
-        private readonly CreateUserHandler _createUserHandler;
+        private readonly SignUpHandler _signUpHandler;
         private readonly IMapper _mapper;
 
-        public SignUpController(CreateUserHandler createUserHandler, IMapper mapper)
+        public SignUpController(SignUpHandler signUpHandler, IMapper mapper)
         {
-            _createUserHandler = createUserHandler;
+            _signUpHandler = signUpHandler;
             _mapper       = mapper;
         }
 
         [HttpPost, NhSession]
         public async Task<ActionResult<UserResponse>> Post([FromBody] SignUpRequest request)
         {
-            var command = _mapper.Map<CreateUserCommand>(request);
-            var user = await _createUserHandler.Handle(command);
+            var command = _mapper.Map<SignUpCommand>(request);
+            var user = await _signUpHandler.Handle(command);
 
             var response = new UserResponse
             {

@@ -8,7 +8,7 @@ namespace Sanri.API.Authorization.API.Mappings
     {
         public SignUpRequestProfile()
         {
-            CreateMap<SignUpRequest, CreateUserCommand>()
+            CreateMap<SignUpRequest, SignUpCommand>()
                 .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.Username))
                 .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password));
         }

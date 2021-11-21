@@ -9,7 +9,7 @@ namespace Sanri.Application.Authorization.API
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<UserRepository>().SingleInstance();
-            builder.RegisterType<CreateUserHandler>().SingleInstance();
+            builder.RegisterType<SignUpHandler>().SingleInstance();
         }
     }
 }

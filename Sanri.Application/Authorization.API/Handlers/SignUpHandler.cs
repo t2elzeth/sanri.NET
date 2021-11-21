@@ -4,23 +4,23 @@ using Sanri.Core.Models;
 
 namespace Sanri.Application.Authorization.API.Handlers
 {
-    public class CreateUserCommand
+    public class SignUpCommand
     {
         public string Username { get; set; }
         
         public string Password { get; set; }
     }
-    
-    public class CreateUserHandler
+
+    public class SignUpHandler
     {
         private readonly UserRepository _userRepository;
 
-        public CreateUserHandler(UserRepository userRepository)
+        public SignUpHandler(UserRepository userRepository)
         {
             _userRepository = userRepository;
         }
 
-        public async Task<User> Handle(CreateUserCommand command)
+        public async Task<User> Handle(SignUpCommand command)
         {
             var user = new User
             {
