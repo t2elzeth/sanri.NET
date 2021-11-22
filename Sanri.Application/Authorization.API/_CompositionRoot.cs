@@ -10,8 +10,16 @@ namespace Sanri.Application.Authorization.API
     {
         protected override void Load(ContainerBuilder builder)
         {
+            // TODO: Create new composition roots for repositories and handlers
+            
+            // Repositories
             builder.RegisterType<UserRepository>().SingleInstance();
+            
+            // Handlers
             builder.RegisterType<SignUpHandler>().SingleInstance();
+            builder.RegisterType<SignInHandler>().SingleInstance();
+            
+            // Other
             builder.RegisterType<PasswordHasher<User>>().SingleInstance();
         }
     }

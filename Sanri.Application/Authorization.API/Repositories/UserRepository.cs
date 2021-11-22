@@ -17,7 +17,7 @@ namespace Sanri.Application.Authorization.API.Repositories
             var transaction     = nhSession.BeginTransaction();
 
             await nhSession.SaveOrUpdateAsync(user);
-            
+
             transaction.Commit();
 
             return user;
@@ -40,6 +40,28 @@ from public.users;
             var rows = await connection.QueryAsync<User>(sql);
 
             return rows.ToList();
+        }
+
+        public async Task<User> GetSingle(string username)
+        {
+            const string sql = @"
+select id, 
+       username,
+       password
+from public.users
+where username = @username
+";
+            var parameters = new
+            {
+                username
+            };
+
+            var databaseSession = NhDatabaseSession.Current;
+            var connection      = databaseSession.Connection;
+
+            var user = await connection.QuerySingleAsync<User>(sql, parameters);
+
+            return user;
         }
     }
 }
