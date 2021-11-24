@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Core", "Sanri.Core\Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Application", "Sanri.Application\Sanri.Application.csproj", "{AFFCB312-B41F-4DC0-8CC9-2F21D74193F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Infrastructure", "Sanri.Infrastructure\Sanri.Infrastructure.csproj", "{82E87425-B9D8-4F14-BD33-18C6D09FFF5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Nh", "Sanri.Nh\Sanri.Nh.csproj", "{82E87425-B9D8-4F14-BD33-18C6D09FFF5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{84410904-5AD7-499B-876C-9863051CB35B}"
 EndProject
@@ -60,5 +60,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{983DA924-7D4A-481A-AB88-6C0EB5EF043E} = {D03A49FF-06DB-47F8-865F-2E827B01EC7A}
 		{8CF18A4A-D93C-4D0F-AFAE-ED6647BD05FD} = {D03A49FF-06DB-47F8-865F-2E827B01EC7A}
+		{82E87425-B9D8-4F14-BD33-18C6D09FFF5C} = {D03A49FF-06DB-47F8-865F-2E827B01EC7A}
 	EndGlobalSection
 EndGlobal

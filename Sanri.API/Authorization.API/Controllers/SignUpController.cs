@@ -3,7 +3,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Sanri.API.Authorization.API.DTOs;
 using Sanri.Application.Authorization.API.Handlers;
-using Sanri.Infrastructure.Nh;
+using Sanri.Nh.Nh;
 
 namespace Sanri.API.Authorization.API.Controllers
 {

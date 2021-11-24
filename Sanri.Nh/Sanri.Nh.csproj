@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Sanri.Infrastructure</RootNamespace>
+        <RootNamespace>Sanri.Nh</RootNamespace>
     </PropertyGroup>
     
     <ItemGroup>

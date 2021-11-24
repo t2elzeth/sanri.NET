@@ -2,7 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Reflection;
 
-namespace Sanri.Infrastructure.Nh
+namespace Sanri.Nh.Nh
 {
     internal static class AttributeProvider<T> where T : Attribute
     {

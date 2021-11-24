@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Sanri.API.Validation;
 using Sanri.API.Validation.Extensions;
-using Sanri.Infrastructure.Nh;
+using Sanri.Nh.Nh;
 
 namespace Sanri.API
 {
@@ -58,7 +58,7 @@ namespace Sanri.API
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyModules(Assembly.Load("Sanri.Infrastructure"));
+            builder.RegisterAssemblyModules(Assembly.Load("Sanri.Nh"));
             builder.RegisterAssemblyModules(Assembly.Load("Sanri.Application"));
         }
         

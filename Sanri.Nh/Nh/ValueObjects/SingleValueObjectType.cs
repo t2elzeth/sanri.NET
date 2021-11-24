@@ -5,7 +5,7 @@ using NHibernate.SqlTypes;
 using NHibernate.Type;
 using NHibernate.UserTypes;
 
-namespace Sanri.API.Nh
+namespace Sanri.Nh.Nh.ValueObjects
 {
     public abstract class SingleValueObjectType<TValue> : IUserType where TValue : class
     {

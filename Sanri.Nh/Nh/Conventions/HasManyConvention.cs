@@ -2,7 +2,7 @@ using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
 using Humanizer;
 
-namespace Sanri.Infrastructure.Nh.Conventions
+namespace Sanri.Nh.Nh.Conventions
 {
     public class HasManyConvention : IHasManyConvention
     {
