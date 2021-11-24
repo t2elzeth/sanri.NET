@@ -4,24 +4,24 @@ using FluentValidation;
 using FluentValidation.Validators;
 using NHibernate;
 
-namespace Sanri.API.Validation
+namespace Sanri.API.Validation.CustomValidators
 {
-    public static class UniqueLoginValidatorExtensions
+    public static class UniqueUsernameValidatorExtensions
     {
-        public static IRuleBuilderOptions<T, string> MustBeUniqueLogin<T>(this IRuleBuilder<T, string> ruleBuilder,
+        public static IRuleBuilderOptions<T, string> MustBeUniqueUsername<T>(this IRuleBuilder<T, string> ruleBuilder,
                                                                           ISessionFactory sessionFactory)
         {
-            return ruleBuilder.SetValidator(new UniqueLoginValidator<T>(sessionFactory));
+            return ruleBuilder.SetValidator(new UniqueUsernameValidator<T>(sessionFactory));
         }
     }
 
-    public class UniqueLoginValidator<T> : PropertyValidator<T, string>
+    public class UniqueUsernameValidator<T> : PropertyValidator<T, string>
     {
-        public override string Name => "UniqueLoginValidator";
+        public override string Name => "UniqueUsernameValidator";
 
         private readonly ISessionFactory _sessionFactory;
 
-        public UniqueLoginValidator(ISessionFactory sessionFactory)
+        public UniqueUsernameValidator(ISessionFactory sessionFactory)
         {
             _sessionFactory = sessionFactory;
         }
@@ -40,21 +40,20 @@ namespace Sanri.API.Validation
 
         protected override string GetDefaultMessageTemplate(string errorCode)
         {
-            return "unique err";
-            //todo return SystemError.LoginIsAlreadyUsed.Message;
+            return SystemError.UsernameIsAlreadyTaken.Message;
         }
-        
-        private static bool IsUserExists(IDbConnection connection, string login)
+
+        private static bool IsUserExists(IDbConnection connection, string username)
         {
             const string sql = @"
-select count(1)
-  from public.users t
- where t.login = :login
-";
+                                select count(1)
+                                  from public.users t
+                                 where t.username = :username
+                                ";
 
             var parameters = new
             {
-                login
+                username
             };
 
             return connection.ExecuteScalar<long>(sql, parameters) == 1;

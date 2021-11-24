@@ -1,4 +1,6 @@
 using FluentValidation;
+using NHibernate;
+using Sanri.API.Validation.CustomValidators;
 
 namespace Sanri.API.Authorization.API.DTOs
 {
@@ -12,11 +14,13 @@ namespace Sanri.API.Authorization.API.DTOs
 
         public class Validator : AbstractValidator<SignUpRequest>
         {
-            public Validator()
+            public Validator(ISessionFactory sessionFactory)
             {
                 RuleFor(x => x.Username)
                     .NotEmpty()
                     .NotNull();
+
+                RuleFor(x => x.Username).MustBeUniqueUsername(sessionFactory);
 
                 RuleFor(x => x.Password)
                     .NotEmpty()

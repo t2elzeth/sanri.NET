@@ -2,9 +2,9 @@ using System;
 using CSharpFunctionalExtensions;
 using FluentValidation;
 
-namespace Sanri.API.Validation
+namespace Sanri.API.Validation.CustomValidators
 {
-    public static class CustomValidators
+    public static class MustBeValueObjectValidator
     {
         public static IRuleBuilderOptions<T, TProperty> MustBeValueObject<T, TValueObject, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder,
                                                                                                       Func<TProperty, Result<TValueObject, SystemError>> factoryMethod)

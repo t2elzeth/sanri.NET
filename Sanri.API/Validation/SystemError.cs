@@ -36,7 +36,7 @@ namespace Sanri.API.Validation
         public const string EnterLoginOfOtherUserMessage = "Укажите номер кошелька другого пользователя";
         
         public static readonly SystemError UserIsNotFound = new(UserIsNotFoundMessage);
-        public static readonly SystemError LoginIsAlreadyUsed = new("Логин уже занят");
+        public static readonly SystemError UsernameIsAlreadyTaken = new("This username is already taken");
         public static readonly SystemError WrongConfirmationCode = new(WrongConfirmationCodeMessage);
         public static readonly SystemError CannotUpdateProfileUserIsAlreadyVerified = new("Невозможно изменить профиль, пользователь уже верифицирован");
         public static readonly SystemError CannotPartiallyUpdateProfileUserIsNotVerified = new("Невозможно изменить профиль, пользователь не верифицирован");
