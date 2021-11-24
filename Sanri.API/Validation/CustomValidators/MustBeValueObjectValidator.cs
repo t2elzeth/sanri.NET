@@ -1,6 +1,7 @@
 using System;
 using CSharpFunctionalExtensions;
 using FluentValidation;
+using Sanri.System;
 
 namespace Sanri.API.Validation.CustomValidators
 {

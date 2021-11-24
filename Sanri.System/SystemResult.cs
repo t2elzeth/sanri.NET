@@ -1,6 +1,6 @@
 using System;
 
-namespace Sanri.API.Validation
+namespace Sanri.System
 {
     public class SystemResult<TResult>
     {

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
-namespace Sanri.API.Validation
+namespace Sanri.System
 {
     public class SystemError
     {

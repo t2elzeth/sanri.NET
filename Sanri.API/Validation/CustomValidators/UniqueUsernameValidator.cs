@@ -3,6 +3,7 @@ using Dapper;
 using FluentValidation;
 using FluentValidation.Validators;
 using NHibernate;
+using Sanri.System;
 
 namespace Sanri.API.Validation.CustomValidators
 {

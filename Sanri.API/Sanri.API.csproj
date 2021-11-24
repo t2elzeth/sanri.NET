@@ -25,6 +25,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Sanri.Application\Sanri.Application.csproj" />
       <ProjectReference Include="..\Sanri.Infrastructure\Sanri.Infrastructure.csproj" />
+      <ProjectReference Include="..\Sanri.System\Sanri.System.csproj" />
     </ItemGroup>
 
 </Project>
