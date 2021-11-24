@@ -2,7 +2,7 @@ using Commons.Nh.Contexts;
 using NHibernate;
 using NHibernate.Cfg;
 
-namespace Sanri.Nh.Nh
+namespace Sanri.Nh
 {
     public static class NhSessionFactory
     {

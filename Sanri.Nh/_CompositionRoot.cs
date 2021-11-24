@@ -1,6 +1,6 @@
 using Autofac;
 
-namespace Sanri.Nh.Nh
+namespace Sanri.Nh
 {
     public class CompositionRoot : Module
     {

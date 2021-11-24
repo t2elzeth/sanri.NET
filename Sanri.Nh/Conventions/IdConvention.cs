@@ -2,7 +2,7 @@ using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
 using Humanizer;
 
-namespace Sanri.Nh.Nh.Conventions
+namespace Sanri.Nh.Conventions
 {
     public class IdConvention : IIdConvention
     {

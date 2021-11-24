@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Sanri.API.Validation;
 using Sanri.API.Validation.Extensions;
-using Sanri.Nh.Nh;
+using Sanri.Nh;
 
 namespace Sanri.API
 {

@@ -3,7 +3,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Controllers;
 
-namespace Sanri.Nh.Nh
+namespace Sanri.Nh
 {
     internal static class ActionDescriptorExtensions
     {
