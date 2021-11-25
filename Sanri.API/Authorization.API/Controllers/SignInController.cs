@@ -1,12 +1,6 @@
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 using Sanri.API.Authorization.API.DTOs;
 using Sanri.Application.Authorization.API.Handlers;
 using Sanri.Nh;
@@ -20,13 +14,11 @@ namespace Sanri.API.Authorization.API.Controllers
     {
         private readonly IMapper _mapper;
         private readonly SignInHandler _signInHandler;
-        private readonly IConfiguration _config;
 
-        public SignInController(IMapper mapper, SignInHandler signInHandler, IConfiguration config)
+        public SignInController(IMapper mapper, SignInHandler signInHandler)
         {
             _mapper        = mapper;
             _signInHandler = signInHandler;
-            _config        = config;
         }
 
         [HttpPost, NhSession]
