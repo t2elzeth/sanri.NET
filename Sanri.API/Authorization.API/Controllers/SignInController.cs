@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sanri.API.Authorization.API.DTOs;
 using Sanri.Application.Authorization.API.Handlers;
 using Sanri.Nh;
+using Sanri.System;
 using SignInResult = Sanri.Application.Authorization.API.Handlers.SignInResult;
 
 namespace Sanri.API.Authorization.API.Controllers
@@ -27,6 +28,11 @@ namespace Sanri.API.Authorization.API.Controllers
             var command = _mapper.Map<SignInCommand>(request);
             var result = await _signInHandler.Handle(command);
 
+            return Result<SignInResult>(result);
+        }
+        
+        private ActionResult<T> Result<T>(SystemResult<T> result)
+        {
             if (result.IsFailure)
                 return BadRequest(result.Error);
 

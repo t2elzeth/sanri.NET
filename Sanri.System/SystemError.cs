@@ -27,7 +27,6 @@ namespace Sanri.System
         public const string SelectSalepointMessage = "Выберите кассу";
         public const string SumMustBeOneKztAtLeastMessage = "Минимальный платеж - 1 тенге";
         public const string AccountIsNotFoundMessage = "Номер счета не найден";
-        public const string InvalidPasswordMessage = "Неверный пароль";
         public const string WithdrawalAlreadyRefundedMessage = "Заявка на вывод уже возвращена";
 
         public const string UserIsBlockedMessage = "Пользователь заблокирован";
@@ -66,6 +65,7 @@ namespace Sanri.System
         public static readonly SystemError PaymentDenied = new("Прием платежа запрещен, обратитесь к оператору");
         public static readonly SystemError ProviderDailyLimitExceeded = new("Превышен суточный лимит на сумму операций");
         public static readonly SystemError AccountIsInactive = new("Счет абонента не активен");
+        public static readonly SystemError InvalidPassword = new("Incorrect password");
         
         public string? Message { get; set; }
 

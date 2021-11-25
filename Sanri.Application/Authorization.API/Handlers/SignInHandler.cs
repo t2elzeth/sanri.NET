@@ -22,6 +22,14 @@ namespace Sanri.Application.Authorization.API.Handlers
     public class SignInResult
     {
         public string AccessToken { get; set; }
+
+        public static implicit operator SignInResult(string token)
+        {
+            return new SignInResult
+            {
+                AccessToken = token
+            };
+        }
     }
 
     public class SignInHandler
@@ -44,16 +52,12 @@ namespace Sanri.Application.Authorization.API.Handlers
 
             if (isCorrect)
             {
-                // var user = Authenticate(command);
-                var token = Generate(user);
-                var result = new SignInResult
-                {
-                    AccessToken = token,
-                };
+                var          token  = Generate(user);
+                SignInResult result = token;
                 return result;
             }
 
-            return new SystemError("password", "Password is incorrect");
+            return SystemError.InvalidPassword;
         }
 
         private bool VerifyPassword(User user, string hashedPassword, string givenPassword)
@@ -80,11 +84,6 @@ namespace Sanri.Application.Authorization.API.Handlers
                                              signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        private SignInCommand Authenticate(SignInCommand userLogin)
-        {
-            return userLogin;
         }
     }
 }
