@@ -50,14 +50,12 @@ namespace Sanri.Application.Authorization.API.Handlers
             var user      = await _userRepository.GetSingle(command.Username);
             var isCorrect = VerifyPassword(user, user.Password, command.Password);
 
-            if (isCorrect)
-            {
-                var          token  = Generate(user);
-                SignInResult result = token;
-                return result;
-            }
+            if (!isCorrect)
+                return SystemError.InvalidPassword;
 
-            return SystemError.InvalidPassword;
+            var          token  = Generate(user);
+            SignInResult result = token;
+            return result;
         }
 
         private bool VerifyPassword(User user, string hashedPassword, string givenPassword)
