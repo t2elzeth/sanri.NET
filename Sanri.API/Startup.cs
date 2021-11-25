@@ -1,11 +1,14 @@
 using System.Reflection;
+using System.Text;
 using Autofac;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -37,6 +40,20 @@ namespace Sanri.API
                         config.DisableDataAnnotationsValidation      = true;
                         config.ImplicitlyValidateChildProperties     = true;
                         config.RegisterValidatorsFromAssembly(Assembly.Load("Sanri.API"));
+                    });
+            
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(options => {
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer           = true,
+                            ValidateAudience         = true,
+                            ValidateLifetime         = true,
+                            ValidateIssuerSigningKey = true,
+                            ValidIssuer              = Configuration["Jwt:Issuer"],
+                            ValidAudience            = Configuration["Jwt:Audience"],
+                            IssuerSigningKey         = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                        };
                     });
 
             
@@ -79,6 +96,7 @@ namespace Sanri.API
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

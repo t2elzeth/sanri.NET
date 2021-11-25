@@ -15,11 +15,14 @@
         <PackageReference Include="FluentValidation" Version="10.3.4" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.4" />
         <PackageReference Include="Humanizer.Core" Version="2.11.10" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.20" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.14.1" />
         <PackageReference Include="NHibernate" Version="5.3.10" />
         <PackageReference Include="Npgsql" Version="6.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.14.1" />
     </ItemGroup>
 
     <ItemGroup>
