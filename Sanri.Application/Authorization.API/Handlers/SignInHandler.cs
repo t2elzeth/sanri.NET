@@ -18,6 +18,11 @@ namespace Sanri.Application.Authorization.API.Handlers
         public string Password { get; set; }
     }
 
+    public class SignInResult
+    {
+        public string AccessToken { get; set; }
+    }
+
     public class SignInHandler
     {
         private readonly UserRepository _userRepository;
@@ -31,7 +36,7 @@ namespace Sanri.Application.Authorization.API.Handlers
             _config    = config;
         }
 
-        public async Task<string> Handle(SignInCommand command)
+        public async Task<SignInResult> Handle(SignInCommand command)
         {
             var user      = await _userRepository.GetSingle(command.Username);
             var isCorrect = VerifyPassword(user, user.Password, command.Password);
@@ -40,10 +45,17 @@ namespace Sanri.Application.Authorization.API.Handlers
             {
                 // var user = Authenticate(command);
                 var token = Generate(user);
-                return token;
+                var result = new SignInResult
+                {
+                    AccessToken = token,
+                };
+                return result;
             }
 
-            return user.Username;
+            return new SignInResult
+            {
+                AccessToken = "disallowed"
+            };
         }
 
         private bool VerifyPassword(User user, string hashedPassword, string givenPassword)

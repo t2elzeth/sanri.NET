@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using Sanri.API.Authorization.API.DTOs;
 using Sanri.Application.Authorization.API.Handlers;
 using Sanri.Nh;
+using SignInResult = Sanri.Application.Authorization.API.Handlers.SignInResult;
 
 namespace Sanri.API.Authorization.API.Controllers
 {
@@ -29,7 +30,7 @@ namespace Sanri.API.Authorization.API.Controllers
         }
 
         [HttpPost, NhSession]
-        public async Task<ActionResult<string>> Post(SignInRequest request)
+        public async Task<ActionResult<SignInResult>> Post(SignInRequest request)
         {
             var command = _mapper.Map<SignInCommand>(request);
             return await _signInHandler.Handle(command);
