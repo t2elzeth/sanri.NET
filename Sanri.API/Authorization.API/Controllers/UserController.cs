@@ -17,25 +17,6 @@ namespace Sanri.API.Authorization.API.Controllers
             return Ok($"Hi {currentUser}");
         }
 
-
-        [HttpGet("Sellers")]
-        [Authorize]
-        public IActionResult SellersEndpoint()
-        {
-            var currentUser = GetCurrentUser();
-
-            return Ok($"Hi {currentUser}");
-        }
-
-        [HttpGet("AdminsAndSellers")]
-        [Authorize]
-        public IActionResult AdminsAndSellersEndpoint()
-        {
-            var currentUser = GetCurrentUser();
-
-            return Ok($"Hi {currentUser}");
-        }
-
         [HttpGet("Public")]
         public IActionResult Public()
         {
