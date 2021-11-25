@@ -25,7 +25,12 @@ namespace Sanri.API.Authorization.API.Controllers
         public async Task<ActionResult<SignInResult>> Post(SignInRequest request)
         {
             var command = _mapper.Map<SignInCommand>(request);
-            return await _signInHandler.Handle(command);
+            var result = await _signInHandler.Handle(command);
+
+            if (result.IsFailure)
+                return BadRequest(result.Error);
+
+            return result.Value;
         }
     }
 }

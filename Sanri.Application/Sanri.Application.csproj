@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Sanri.Core\Sanri.Core.csproj" />
+      <ProjectReference Include="..\Sanri.System\Sanri.System.csproj" />
     </ItemGroup>
 
     <ItemGroup>

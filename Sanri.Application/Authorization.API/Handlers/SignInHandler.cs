@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Sanri.Application.Authorization.API.Repositories;
 using Sanri.Core.Models;
+using Sanri.System;
 
 namespace Sanri.Application.Authorization.API.Handlers
 {
@@ -33,10 +34,10 @@ namespace Sanri.Application.Authorization.API.Handlers
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
-            _config    = config;
+            _config         = config;
         }
 
-        public async Task<SignInResult> Handle(SignInCommand command)
+        public async Task<SystemResult<SignInResult>> Handle(SignInCommand command)
         {
             var user      = await _userRepository.GetSingle(command.Username);
             var isCorrect = VerifyPassword(user, user.Password, command.Password);
@@ -52,10 +53,7 @@ namespace Sanri.Application.Authorization.API.Handlers
                 return result;
             }
 
-            return new SignInResult
-            {
-                AccessToken = "disallowed"
-            };
+            return new SystemError("password", "Password is incorrect");
         }
 
         private bool VerifyPassword(User user, string hashedPassword, string givenPassword)
@@ -64,7 +62,7 @@ namespace Sanri.Application.Authorization.API.Handlers
 
             return isCorrect == PasswordVerificationResult.Success;
         }
-        
+
         private string Generate(User user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
