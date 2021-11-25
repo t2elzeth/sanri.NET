@@ -12,8 +12,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Sanri.API.Extensions;
 using Sanri.API.Validation;
-using Sanri.API.Validation.Extensions;
 using Sanri.Nh;
 
 namespace Sanri.API
