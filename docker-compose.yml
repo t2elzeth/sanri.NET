@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  seq:
+    image: datalust/seq:latest
+    container_name: sanri-seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5341:80

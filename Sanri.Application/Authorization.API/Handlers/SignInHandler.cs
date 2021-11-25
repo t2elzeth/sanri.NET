@@ -1,8 +1,10 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -19,6 +21,7 @@ namespace Sanri.Application.Authorization.API.Handlers
         public string Password { get; set; }
     }
 
+    [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public class SignInResult
     {
         public string AccessToken { get; set; }
@@ -34,7 +37,7 @@ namespace Sanri.Application.Authorization.API.Handlers
 
     public class SignInHandlerOptions
     {
-        public string Key { get; set; }
+        public string Key { get; set; } = null!;
         public string Issuer { get; set; }
         public string Audience { get; set; }
     }
@@ -91,6 +94,18 @@ namespace Sanri.Application.Authorization.API.Handlers
                                              signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        private static bool TryGetValue(string param, [MaybeNullWhen(false)]out string result)
+        {
+            if (param == "ok")
+            {
+                result = "ok";
+                return true;
+            }
+
+            result = null;
+            return false;
         }
     }
 }
