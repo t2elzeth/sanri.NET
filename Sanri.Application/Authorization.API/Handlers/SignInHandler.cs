@@ -4,7 +4,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Sanri.Application.Authorization.API.Repositories;
 using Sanri.Core.Models;
@@ -32,17 +32,26 @@ namespace Sanri.Application.Authorization.API.Handlers
         }
     }
 
+    public class SignInHandlerOptions
+    {
+        public string Key { get; set; }
+        public string Issuer { get; set; }
+        public string Audience { get; set; }
+    }
+    
     public class SignInHandler
     {
+        private readonly IOptions<SignInHandlerOptions> _options;
         private readonly UserRepository _userRepository;
         private readonly PasswordHasher<User> _passwordHasher;
-        private readonly IConfiguration _config;
 
-        public SignInHandler(UserRepository userRepository, PasswordHasher<User> passwordHasher, IConfiguration config)
+        public SignInHandler(IOptions<SignInHandlerOptions> options,
+                             UserRepository userRepository, 
+                             PasswordHasher<User> passwordHasher)
         {
+            _options   = options;
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
-            _config         = config;
         }
 
         public async Task<SystemResult<SignInResult>> Handle(SignInCommand command)
@@ -53,9 +62,7 @@ namespace Sanri.Application.Authorization.API.Handlers
             if (!isCorrect)
                 return SystemError.InvalidPassword;
 
-            var          token  = Generate(user);
-            SignInResult result = token;
-            return result;
+            return Generate(user);
         }
 
         private bool VerifyPassword(User user, string hashedPassword, string givenPassword)
@@ -65,9 +72,11 @@ namespace Sanri.Application.Authorization.API.Handlers
             return isCorrect == PasswordVerificationResult.Success;
         }
 
-        private string Generate(User user)
+        private SignInResult Generate(User user)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var options = _options.Value;
+
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.Key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
@@ -75,8 +84,8 @@ namespace Sanri.Application.Authorization.API.Handlers
                 new Claim(ClaimTypes.NameIdentifier, user.Username),
             };
 
-            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
-                                             _config["Jwt:Audience"],
+            var token = new JwtSecurityToken(options.Issuer,
+                                             options.Audience,
                                              claims,
                                              expires: DateTime.Now.AddMinutes(15),
                                              signingCredentials: credentials);

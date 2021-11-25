@@ -18,17 +18,19 @@ using Sanri.Nh;
 
 namespace Sanri.API
 {
-    public class Startup
+    public partial class Startup
     {
+        private readonly IConfiguration _configuration;
+        
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
+            RegisterConfigurations(services);
+            
             // Enable CORS
             services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); });
 
@@ -50,9 +52,9 @@ namespace Sanri.API
                             ValidateAudience         = true,
                             ValidateLifetime         = true,
                             ValidateIssuerSigningKey = true,
-                            ValidIssuer              = Configuration["Jwt:Issuer"],
-                            ValidAudience            = Configuration["Jwt:Audience"],
-                            IssuerSigningKey         = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                            ValidIssuer              = _configuration["Jwt:Issuer"],
+                            ValidAudience            = _configuration["Jwt:Audience"],
+                            IssuerSigningKey         = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]))
                         };
                     });
 
