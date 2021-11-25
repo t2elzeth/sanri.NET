@@ -1,7 +1,6 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 
-namespace Playground
+namespace Sanri.Playground
 {
     public class Program
     {

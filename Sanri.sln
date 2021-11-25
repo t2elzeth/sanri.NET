@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Application", "Sanri.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Nh", "Sanri.Nh\Sanri.Nh.csproj", "{82E87425-B9D8-4F14-BD33-18C6D09FFF5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{84410904-5AD7-499B-876C-9863051CB35B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Playground", "Sanri.Playground\Sanri.Playground.csproj", "{84410904-5AD7-499B-876C-9863051CB35B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D03A49FF-06DB-47F8-865F-2E827B01EC7A}"
 EndProject
