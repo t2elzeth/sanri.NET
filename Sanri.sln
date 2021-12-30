@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Core", "Sanri.Core\Sanri.Core.csproj", "{459C872E-EF59-4078-8277-A186EF733943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanri.Core.Tests", "Sanri.Core.Tests\Sanri.Core.Tests.csproj", "{BFDDDC93-A3B9-4D01-866F-06441188B09F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{459C872E-EF59-4078-8277-A186EF733943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459C872E-EF59-4078-8277-A186EF733943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459C872E-EF59-4078-8277-A186EF733943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459C872E-EF59-4078-8277-A186EF733943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFDDDC93-A3B9-4D01-866F-06441188B09F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDDDC93-A3B9-4D01-866F-06441188B09F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDDDC93-A3B9-4D01-866F-06441188B09F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDDDC93-A3B9-4D01-866F-06441188B09F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
