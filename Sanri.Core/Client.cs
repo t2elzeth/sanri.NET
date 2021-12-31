@@ -1,6 +1,6 @@
 namespace Sanri.Core;
 
-public enum ClientPriceTypeEnum
+public enum ClientPriceType
 {
     Fact = 1,
     Fob = 2,
@@ -11,7 +11,7 @@ public class Client
 {
     public long Balance { get; private set; }
 
-    public ClientPriceTypeEnum PriceType { get; set; }
+    public ClientPriceType PriceType { get; set; }
 
     public long TransportationLimit { get; set; }
 
@@ -20,7 +20,7 @@ public class Client
     }
 
     public static Client Create(long balance = 0,
-                                ClientPriceTypeEnum priceType = ClientPriceTypeEnum.Fact,
+                                ClientPriceType priceType = ClientPriceType.Fact,
                                 long transportationLimit = 6000)
     {
         return new Client

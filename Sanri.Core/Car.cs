@@ -54,9 +54,9 @@ public class Car
     {
         return Owner.PriceType switch
         {
-            ClientPriceTypeEnum.Fact => Total.Common,
-            ClientPriceTypeEnum.Fob => Total.Fob,
-            ClientPriceTypeEnum.Fob2 => Total.Fob2,
+            ClientPriceType.Fact => Total.Common,
+            ClientPriceType.Fob => Total.Fob,
+            ClientPriceType.Fob2 => Total.Fob2,
             _ => 0
         };
     }
