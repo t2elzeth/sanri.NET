@@ -15,20 +15,13 @@ public class Client
 
     public long TransportationLimit { get; set; }
 
-    private Client()
+    public Client(long balance = 0,
+                  ClientPriceType priceType = ClientPriceType.Fact,
+                  long transportationLimit = 6000)
     {
-    }
-
-    public static Client Create(long balance = 0,
-                                ClientPriceType priceType = ClientPriceType.Fact,
-                                long transportationLimit = 6000)
-    {
-        return new Client
-        {
-            Balance = balance,
-            PriceType = priceType,
-            TransportationLimit = transportationLimit
-        };
+        Balance             = balance;
+        PriceType           = priceType;
+        TransportationLimit = transportationLimit;
     }
 
     public void WithdrawBalance(long amount)

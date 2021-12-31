@@ -18,36 +18,23 @@ public class Car
 
     public CarTotal Total { get; set; }
 
-    private Car()
+    public Car(Client owner,
+               long price,
+               long auctionFees,
+               long recycle,
+               long transport,
+               long amount,
+               long fob)
     {
-    }
+        Owner       = owner;
+        Price       = price;
+        AuctionFees = auctionFees;
+        Recycle     = recycle;
+        Transport   = transport;
+        Amount      = amount;
+        Fob         = fob;
 
-    public static Car Create(Client owner,
-                             long price,
-                             long auctionFees,
-                             long recycle,
-                             long transport,
-                             long amount,
-                             long fob)
-    {
-        var total = CarTotal.Create(price,
-                                    auctionFees,
-                                    recycle,
-                                    transport,
-                                    amount,
-                                    fob,
-                                    owner.TransportationLimit);
-        return new Car
-        {
-            Owner       = owner,
-            Total       = total,
-            Price       = price,
-            AuctionFees = auctionFees,
-            Recycle     = recycle,
-            Transport   = transport,
-            Amount      = amount,
-            Fob         = fob
-        };
+        Total = CalculateTotal();
     }
 
     public long GetTotal()
@@ -59,6 +46,17 @@ public class Car
             ClientPriceType.Fob2 => Total.Fob2,
             _ => 0
         };
+    }
+
+    public CarTotal CalculateTotal()
+    {
+        return new CarTotal(price: Price,
+                            auctionFees: AuctionFees,
+                            recycle: Recycle,
+                            transport: Transport,
+                            amount: Amount,
+                            fob: Fob,
+                            transportationLimit: Owner.TransportationLimit);
     }
 
     public CarResell Resell(Client newClient, long sellPrice)

@@ -11,23 +11,20 @@ public class CarTotal : ValueObject<CarTotal>
 
     public long Fob2 { get; set; }
 
-    public static CarTotal Create(long price,
-                                  long auctionFees,
-                                  long recycle,
-                                  long transport,
-                                  long amount,
-                                  long fob,
-                                  long transportationLimit)
+    public CarTotal(long price,
+                    long auctionFees,
+                    long recycle,
+                    long transport,
+                    long amount,
+                    long fob,
+                    long transportationLimit)
     {
         var price10           = Convert.ToInt64(price * 0.1);
         var includedTransport = GetIncludedTransport(transport, transportationLimit);
 
-        return new CarTotal
-        {
-            Common = price + price10 + auctionFees + recycle + transport,
-            Fob    = price + amount + fob + includedTransport,
-            Fob2   = price + auctionFees + fob + includedTransport
-        };
+        Common = price + price10 + auctionFees + recycle + transport;
+        Fob    = price + amount + fob + includedTransport;
+        Fob2   = price + auctionFees + fob + includedTransport;
     }
 
     public static long GetIncludedTransport(long transport, long transportLimit)
