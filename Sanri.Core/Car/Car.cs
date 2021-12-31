@@ -1,8 +1,10 @@
-namespace Sanri.Core;
+namespace Sanri.Core.Car;
 
 public class Car
 {
     public Client Owner { get; private set; }
+
+    public Model Model { get; set; }
 
     public long Price { get; set; }
 
@@ -19,6 +21,7 @@ public class Car
     public CarTotal Total { get; set; }
 
     public Car(Client owner,
+               Model model,
                long price,
                long auctionFees,
                long recycle,
@@ -27,6 +30,7 @@ public class Car
                long fob)
     {
         Owner       = owner;
+        Model       = model;
         Price       = price;
         AuctionFees = auctionFees;
         Recycle     = recycle;
@@ -59,11 +63,11 @@ public class Car
                             transportationLimit: Owner.TransportationLimit);
     }
 
-    public CarResell Resell(Client newClient, long sellPrice)
+    public Resell Resell(Client newClient, long sellPrice)
     {
         var oldClient = Owner;
 
-        var carResell = new CarResell(car: this,
+        var carResell = new Resell(car: this,
                                       newClient: newClient,
                                       salePrice: sellPrice);
 
@@ -76,12 +80,12 @@ public class Car
         return carResell;
     }
 
-    public CarSell Sell(string auction,
+    public Sell Sell(string auction,
                         long auctionFees,
                         long salesFees,
                         bool sold = false)
     {
-        var carSell = new CarSell(car: this,
+        var carSell = new Sell(car: this,
                                   auction: auction,
                                   auctionFees: auctionFees,
                                   salesFees: salesFees,

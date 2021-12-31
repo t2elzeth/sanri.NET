@@ -1,6 +1,6 @@
-namespace Sanri.Core;
+namespace Sanri.Core.Car;
 
-public class CarResell
+public class Resell
 {
     public Client OldClient { get; set; }
 
@@ -12,7 +12,7 @@ public class CarResell
 
     public long SalePrice { get; set; }
 
-    public CarResell(Car car, Client newClient, long salePrice)
+    public Resell(Car car, Client newClient, long salePrice)
     {
         OldClient     = car.Owner;
         NewClient     = newClient;

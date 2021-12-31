@@ -1,7 +1,7 @@
 using System;
 using CSharpFunctionalExtensions;
 
-namespace Sanri.Core;
+namespace Sanri.Core.Car;
 
 public class CarTotal : ValueObject<CarTotal>
 {

@@ -1,8 +1,8 @@
 using System;
 
-namespace Sanri.Core;
+namespace Sanri.Core.Car;
 
-public class CarSell
+public class Sell
 {
     public Client Owner { get; set; }
 
@@ -18,7 +18,7 @@ public class CarSell
 
     public long SalesFees { get; set; }
 
-    public CarSell(string auction,
+    public Sell(string auction,
                    Car car,
                    long auctionFees,
                    long salesFees,
