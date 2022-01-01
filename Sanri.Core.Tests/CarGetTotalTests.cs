@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Sanri.Core.Car;
+using Sanri.Core.Users;
 using Xunit;
 
 namespace Sanri.Core.Tests;

@@ -1,3 +1,5 @@
+using Sanri.Core.Users;
+
 namespace Sanri.Core.Car;
 
 public class Resell

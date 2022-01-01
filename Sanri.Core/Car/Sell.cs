@@ -1,4 +1,5 @@
 using System;
+using Sanri.Core.Users;
 
 namespace Sanri.Core.Car;
 

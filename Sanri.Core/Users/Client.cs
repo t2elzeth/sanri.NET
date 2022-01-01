@@ -1,4 +1,4 @@
-namespace Sanri.Core;
+namespace Sanri.Core.Users;
 
 public enum ClientPriceType
 {
@@ -7,10 +7,26 @@ public enum ClientPriceType
     Fob2 = 3
 }
 
-public class Client
+public enum ClientServiceType
+{
+    Entire = 1,
+    Dissection = 2
+}
+
+public class Client : User
 {
     public long Balance { get; private set; }
 
+    public string Country { get; set; }
+
+    public string Email { get; set; }
+
+    public string PhoneNumber { get; set; }
+
+    public long FobSize { get; set; }
+    
+    public ClientServiceType Service { get; set; }
+    
     public ClientPriceType PriceType { get; set; }
 
     public long TransportationLimit { get; set; }
