@@ -20,10 +20,10 @@ public class Sell
     public long SalesFees { get; set; }
 
     public Sell(string auction,
-                   Car car,
-                   long auctionFees,
-                   long salesFees,
-                   bool sold = false)
+                Car car,
+                long auctionFees,
+                long salesFees,
+                bool sold = false)
     {
         Total = car.Price
                 + Convert.ToInt64(car.Price * 0.1)

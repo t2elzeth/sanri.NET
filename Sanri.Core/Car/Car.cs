@@ -70,8 +70,8 @@ public class Car
         var oldClient = Owner;
 
         var carResell = new Resell(car: this,
-                                      newClient: newClient,
-                                      salePrice: sellPrice);
+                                   newClient: newClient,
+                                   salePrice: sellPrice);
 
         oldClient.ReplenishBalance(GetTotal());
         newClient.WithdrawBalance(GetTotal());
@@ -83,15 +83,15 @@ public class Car
     }
 
     public Sell Sell(string auction,
-                        long auctionFees,
-                        long salesFees,
-                        bool sold = false)
+                     long auctionFees,
+                     long salesFees,
+                     bool sold = false)
     {
         var carSell = new Sell(car: this,
-                                  auction: auction,
-                                  auctionFees: auctionFees,
-                                  salesFees: salesFees,
-                                  sold: sold);
+                               auction: auction,
+                               auctionFees: auctionFees,
+                               salesFees: salesFees,
+                               sold: sold);
 
         this.Owner.ReplenishBalance(carSell.Total);
 

@@ -24,9 +24,9 @@ public class Client : User
     public string PhoneNumber { get; set; }
 
     public long FobSize { get; set; }
-    
+
     public ClientServiceType Service { get; set; }
-    
+
     public ClientPriceType PriceType { get; set; }
 
     public long TransportationLimit { get; set; }
