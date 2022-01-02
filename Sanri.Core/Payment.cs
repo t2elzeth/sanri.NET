@@ -1,4 +1,5 @@
 using System;
+using CSharpFunctionalExtensions;
 using Sanri.Core.Users;
 
 namespace Sanri.Core;
@@ -15,11 +16,33 @@ public enum PaymentAction
     Withdrawal = 2
 }
 
-public enum PaymentPurpose
+public class PaymentPurpose : ValueObject<PaymentPurpose>
 {
-    CarOrder = 1,
-    CarResell = 2,
-    CarSell = 3
+    public static readonly PaymentPurpose CarOrder = new("CarOrder");
+    public static readonly PaymentPurpose CarResell = new("CarResell");
+    public static readonly PaymentPurpose CarSell = new("CarSell");
+
+    public string Value { get; private set; }
+
+    private PaymentPurpose(string purpose)
+    {
+        Value = purpose;
+    }
+
+    public static PaymentPurpose Create(string purpose)
+    {
+        return new PaymentPurpose(purpose);
+    }
+
+    protected override bool EqualsCore(PaymentPurpose other)
+    {
+        return Value == other.Value;
+    }
+
+    protected override int GetHashCodeCore()
+    {
+        return Value.GetHashCode();
+    }
 }
 
 public class Payment
