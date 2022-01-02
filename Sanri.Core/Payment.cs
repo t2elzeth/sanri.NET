@@ -3,19 +3,26 @@ using Sanri.Core.Users;
 
 namespace Sanri.Core;
 
-public enum BalanceTransaction
+public enum PaymentTransaction
 {
     Cash = 1,
     Cashless = 2,
 }
 
-public enum BalanceAction
+public enum PaymentAction
 {
     Replenishment = 1,
     Withdrawal = 2
 }
 
-public class Balance
+public enum PaymentPurpose
+{
+    CarOrder = 1,
+    CarResell = 2,
+    CarSell = 3
+}
+
+public class Payment
 {
     public User User { get; set; }
 
@@ -31,7 +38,9 @@ public class Balance
 
     public string Comment { get; set; }
 
-    public BalanceTransaction Transaction { get; set; }
+    public PaymentTransaction Transaction { get; set; }
 
-    public BalanceAction Action { get; set; }
+    public PaymentAction Action { get; set; }
+
+    public PaymentPurpose Purpose { get; set; }
 }
