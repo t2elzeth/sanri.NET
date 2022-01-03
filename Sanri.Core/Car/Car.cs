@@ -6,7 +6,13 @@ public class Car
 {
     public Client Owner { get; private set; }
 
+    public Auction Auction { get; set; }
+
+    public long LotNumber { get; set; }
+    
     public Model Model { get; set; }
+
+    public string Vin  { get; set; }
 
     public long Price { get; set; }
 
@@ -19,6 +25,16 @@ public class Car
     public long Amount { get; set; }
 
     public long Fob { get; set; }
+
+    public TransportCompany TransportCompany { get; set; }
+
+    public CarNumberStatus NumberStatus { get; set; }
+
+    public bool DocumentsGiven { get; set; }
+
+    public string Comment { get; set; }
+
+    public long AdditionalExpenses { get; set; }
 
     public CarTotal Total { get; set; }
 
@@ -97,4 +113,11 @@ public class Car
 
         return carSell;
     }
+}
+
+public enum CarNumberStatus
+{
+    Removed = 1,
+    NotRemoved = 2,
+    NotGiven = 3
 }
