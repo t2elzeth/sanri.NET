@@ -17,7 +17,7 @@ public class SellCommand
 
 public class SellHandler
 {
-    public Sell Handle(SellCommand command)
+    public CarSell Handle(SellCommand command)
     {
         var car = command.Car;
 

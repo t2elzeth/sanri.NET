@@ -3,7 +3,7 @@ using Sanri.Core.Users;
 
 namespace Sanri.Core.Car;
 
-public class Sell
+public class CarSell
 {
     public Client Owner { get; set; }
 
@@ -19,7 +19,7 @@ public class Sell
 
     public long SalesFees { get; set; }
 
-    public Sell(string auction,
+    public CarSell(string auction,
                 Car car,
                 long auctionFees,
                 long salesFees,

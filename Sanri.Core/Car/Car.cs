@@ -94,12 +94,12 @@ public class Car
         return carResell;
     }
 
-    public Sell Sell(string auction,
+    public CarSell Sell(string auction,
                      long auctionFees,
                      long salesFees,
                      bool sold = false)
     {
-        var carSell = new Sell(car: this,
+        var carSell = new CarSell(car: this,
                                auction: auction,
                                auctionFees: auctionFees,
                                salesFees: salesFees,
