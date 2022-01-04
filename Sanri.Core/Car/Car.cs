@@ -9,10 +9,10 @@ public class Car
     public Auction Auction { get; set; }
 
     public long LotNumber { get; set; }
-    
+
     public Model Model { get; set; }
 
-    public string Vin  { get; set; }
+    public string Vin { get; set; }
 
     public long Price { get; set; }
 
@@ -44,8 +44,7 @@ public class Car
                long auctionFees,
                long recycle,
                long transport,
-               long amount,
-               long fob)
+               long amount)
     {
         Owner       = owner;
         Model       = model;
@@ -54,9 +53,9 @@ public class Car
         Recycle     = recycle;
         Transport   = transport;
         Amount      = amount;
-        Fob         = fob;
+        Fob         = owner.FobSize;
 
-        Total = CalculateTotal();
+        BuildTotal();
     }
 
     public long GetTotal()
@@ -70,30 +69,27 @@ public class Car
         };
     }
 
-    public CarTotal CalculateTotal()
+    private void BuildTotal()
     {
-        return new CarTotal(price: Price,
-                            auctionFees: AuctionFees,
-                            recycle: Recycle,
-                            transport: Transport,
-                            amount: Amount,
-                            fob: Fob,
-                            transportationLimit: Owner.TransportationLimit);
+        Total = CarTotal.Create(price: Price,
+                                auctionFees: AuctionFees,
+                                recycle: Recycle,
+                                transport: Transport,
+                                amount: Amount,
+                                fob: Fob,
+                                transportationLimit: Owner.TransportationLimit);
     }
 
-    public Resell Resell(Client newClient, long sellPrice)
+    public CarResell Resell(Client newClient, long sellPrice)
     {
-        var oldClient = Owner;
-
-        var carResell = new Resell(car: this,
-                                   newClient: newClient,
-                                   salePrice: sellPrice);
-
-        oldClient.ReplenishBalance(GetTotal());
-        newClient.WithdrawBalance(GetTotal());
+        var carResell = CarResell.Create(car: this,
+                                         newClient: newClient,
+                                         salePrice: sellPrice);
 
         Owner = newClient;
         Price = sellPrice;
+
+        BuildTotal();
 
         return carResell;
     }
@@ -108,8 +104,6 @@ public class Car
                                auctionFees: auctionFees,
                                salesFees: salesFees,
                                sold: sold);
-
-        this.Owner.ReplenishBalance(carSell.Total);
 
         return carSell;
     }

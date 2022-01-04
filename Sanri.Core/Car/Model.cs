@@ -6,9 +6,12 @@ public class Model
 
     public string Name { get; set; }
 
-    public Model(Mark mark, string name)
+    public static Model Create(Mark mark, string name)
     {
-        Mark = mark;
-        Name = name;
+        return new Model
+        {
+            Mark = mark,
+            Name = name
+        };
     }
 }

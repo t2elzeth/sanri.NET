@@ -4,8 +4,11 @@ public class Mark
 {
     public string Name { get; set; }
 
-    public Mark(string name)
+    public static Mark Create(string name)
     {
-        Name = name;
+        return new Mark
+        {
+            Name = name
+        };
     }
 }

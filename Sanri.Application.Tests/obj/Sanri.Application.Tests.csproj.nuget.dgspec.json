@@ -1,0 +1,208 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application.Tests/Sanri.Application.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application.Tests/Sanri.Application.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application.Tests/Sanri.Application.Tests.csproj",
+        "projectName": "Sanri.Application.Tests",
+        "projectPath": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application.Tests/Sanri.Application.Tests.csproj",
+        "packagesPath": "/Users/t2elzeth/.nuget/packages/",
+        "outputPath": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/t2elzeth/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "http://78.47.90.183:8100/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application/Sanri.Application.csproj": {
+                "projectPath": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application/Sanri.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application/Sanri.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application/Sanri.Application.csproj",
+        "projectName": "Sanri.Application",
+        "projectPath": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application/Sanri.Application.csproj",
+        "packagesPath": "/Users/t2elzeth/.nuget/packages/",
+        "outputPath": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/t2elzeth/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "http://78.47.90.183:8100/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Core/Sanri.Core.csproj": {
+                "projectPath": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Core/Sanri.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Core/Sanri.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Core/Sanri.Core.csproj",
+        "projectName": "Sanri.Core",
+        "projectPath": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Core/Sanri.Core.csproj",
+        "packagesPath": "/Users/t2elzeth/.nuget/packages/",
+        "outputPath": "/Users/t2elzeth/Documents/code/csharp/Sanri/Sanri.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/t2elzeth/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "http://78.47.90.183:8100/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "CSharpFunctionalExtensions": {
+              "target": "Package",
+              "version": "[2.27.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
