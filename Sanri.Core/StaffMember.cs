@@ -1,6 +1,6 @@
 using System;
 
-namespace Sanri.Core.Staff;
+namespace Sanri.Core;
 
 public class StaffMember
 {
