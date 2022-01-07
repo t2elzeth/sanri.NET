@@ -1,6 +1,6 @@
 using CSharpFunctionalExtensions;
 
-namespace Sanri.Core.Payment;
+namespace Sanri.Core.Payments;
 
 public class PaymentPurpose : ValueObject<PaymentPurpose>
 {

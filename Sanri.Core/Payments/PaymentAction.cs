@@ -1,4 +1,4 @@
-namespace Sanri.Core.Payment;
+namespace Sanri.Core.Payments;
 
 public enum PaymentAction
 {

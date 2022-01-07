@@ -1,7 +1,7 @@
 using System;
 using Sanri.Core.Users;
 
-namespace Sanri.Core.Payment;
+namespace Sanri.Core.Payments;
 
 public class Payment
 {

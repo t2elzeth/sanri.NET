@@ -1,4 +1,4 @@
-namespace Sanri.Core.Payment.Internal;
+namespace Sanri.Core.Payments.Internal;
 
 public enum InternalPaymentPurpose
 {

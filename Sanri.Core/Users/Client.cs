@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Sanri.Core.Payments;
+
 namespace Sanri.Core.Users;
 
 public enum ClientPriceType
@@ -31,6 +34,8 @@ public class Client : User
 
     public long TransportationLimit { get; set; }
 
+    public List<Payment> Payments { get; private set; }
+
     public Client(long balance = 0,
                   ClientPriceType priceType = ClientPriceType.Fact,
                   long transportationLimit = 6000)
@@ -38,6 +43,7 @@ public class Client : User
         Balance             = balance;
         PriceType           = priceType;
         TransportationLimit = transportationLimit;
+        Payments            = new List<Payment>();
     }
 
     public void WithdrawBalance(long amount)
