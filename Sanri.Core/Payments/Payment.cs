@@ -1,31 +1,31 @@
 using System;
-using Sanri.Core.Users;
+using Sanri.Core.Clients;
 
 namespace Sanri.Core.Payments;
 
 public class Payment
 {
-    public User User { get; set; }
+    public Client User { get; private set; } = null!;
 
-    public DateTime Date { get; set; }
+    public DateTime Date { get; private set; }
 
-    public long JpySum { get; set; }
+    public long JpySum { get; private set; }
 
-    public long UsaSum { get; set; }
+    public long UsaSum { get; private set; }
 
-    public decimal Rate { get; set; }
+    public decimal Rate { get; private set; }
 
-    public string Sender { get; set; }
+    public string Sender { get; private set; } = null!;
 
-    public string Comment { get; set; }
+    public string Comment { get; private set; } = null!;
 
-    public PaymentTransaction Transaction { get; set; }
+    public PaymentTransaction Transaction { get; private set; }
 
-    public PaymentAction Action { get; set; }
+    public PaymentAction Action { get; private set; }
 
-    public PaymentPurpose Purpose { get; set; }
+    public PaymentPurpose Purpose { get; private set; } = null!;
 
-    public static Payment Create(User user,
+    public static Payment Create(Client user,
                                  DateTime date,
                                  long jpySum,
                                  string sender,

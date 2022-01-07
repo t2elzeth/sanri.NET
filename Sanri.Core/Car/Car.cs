@@ -1,61 +1,103 @@
-using Sanri.Core.Users;
+using System;
+using System.Collections.Generic;
+using CSharpFunctionalExtensions;
+using Sanri.Core.Clients;
+using Sanri.Core.Payments;
 
 namespace Sanri.Core.Car;
 
 public class Car
 {
-    public Client Owner { get; private set; }
+    public Client Owner { get; private set; } = null!;
 
-    public Auction Auction { get; set; }
+    public Auction Auction { get; private set; } = null!;
 
-    public long LotNumber { get; set; }
+    public long LotNumber { get; private set; }
 
-    public Model Model { get; set; }
+    public Model Model { get; private set; } = null!;
 
-    public string Vin { get; set; }
+    public string Vin { get; private set; } = null!;
 
-    public long Price { get; set; }
+    public long Price { get; private set; }
 
-    public long AuctionFees { get; set; }
+    public long AuctionFees { get; private set; }
 
-    public long Recycle { get; set; }
+    public long Recycle { get; private set; }
 
-    public long Transport { get; set; }
+    public long Transport { get; private set; }
 
-    public long Amount { get; set; }
+    public long Amount { get; private set; }
 
-    public long Fob { get; set; }
+    public long Fob { get; private set; }
 
-    public TransportCompany TransportCompany { get; set; }
+    public TransportCompany TransportCompany { get; private set; } = null!;
 
-    public CarNumberStatus NumberStatus { get; set; }
+    public CarNumberStatus NumberStatus { get; private set; }
 
-    public bool DocumentsGiven { get; set; }
+    public bool DocumentsGiven { get; private set; }
 
-    public string Comment { get; set; }
+    public string Comment { get; private set; } = null!;
 
-    public long AdditionalExpenses { get; set; }
+    public long AdditionalExpenses { get; private set; }
 
-    public CarTotal Total { get; set; }
+    public CarTotal Total { get; private set; } = null!;
 
-    public Car(Client owner,
-               Model model,
-               long price,
-               long auctionFees,
-               long recycle,
-               long transport,
-               long amount)
+    public CarSell? CarSell { get; private set; }
+
+    public List<CarResell> CarResells { get; private set; } = null!;
+
+    public static Car Create(Client owner,
+                             Model model,
+                             long price,
+                             long auctionFees,
+                             long recycle,
+                             long transport,
+                             long amount,
+                             Auction auction,
+                             string vin,
+                             TransportCompany transportCompany,
+                             string comment,
+                             CarTotal total)
     {
-        Owner       = owner;
-        Model       = model;
-        Price       = price;
-        AuctionFees = auctionFees;
-        Recycle     = recycle;
-        Transport   = transport;
-        Amount      = amount;
-        Fob         = owner.FobSize;
+        var car = new Car
+        {
+            Owner            = owner,
+            Model            = model,
+            Price            = price,
+            AuctionFees      = auctionFees,
+            Recycle          = recycle,
+            Transport        = transport,
+            Amount           = amount,
+            Auction          = auction,
+            Vin              = vin,
+            TransportCompany = transportCompany,
+            Comment          = comment,
+            Total            = total,
+            CarResells       = new List<CarResell>(),
+            Fob              = owner.FobSize,
+        };
 
-        BuildTotal();
+        car.BuildTotal();
+
+        car.Owner.Withdraw(date: DateTime.Now,
+                           jpySum: car.GetTotal(),
+                           sender: "CarOrder",
+                           comment: "Comment",
+                           transaction: PaymentTransaction.Cashless,
+                           purpose: PaymentPurpose.CarOrder);
+
+        if (car.Owner.PriceType != ClientPriceType.Fob2)
+            return car;
+
+
+        Clients.Sanri.Instance.Withdraw(date: DateTime.Now,
+                                        jpySum: car.Recycle + Convert.ToInt64(car.Price * 0.1),
+                                        sender: "CarOrder",
+                                        comment: "Comment",
+                                        transaction: PaymentTransaction.Cashless,
+                                        purpose: PaymentPurpose.CarOrder);
+
+        return car;
     }
 
     public long GetTotal()
@@ -80,32 +122,48 @@ public class Car
                                 transportationLimit: Owner.TransportationLimit);
     }
 
-    public CarResell Resell(Client newClient, long sellPrice)
+    public Result<CarResell, string> Resell(Client newClient, long sellPrice)
     {
+        if (Owner == newClient)
+            return "Client can not resell to himself";
+
         var carResell = CarResell.Create(car: this,
                                          newClient: newClient,
                                          salePrice: sellPrice);
 
         Owner = newClient;
         Price = sellPrice;
-
         BuildTotal();
 
+        CarResells.Add(carResell);
         return carResell;
     }
 
-    public CarSell Sell(string auction,
-                     long auctionFees,
-                     long salesFees,
-                     bool sold = false)
+    public Result<CarSell, string> PutForSell(string auction,
+                                        long auctionFees,
+                                        long salesFees)
     {
-        var carSell = new CarSell(car: this,
-                               auction: auction,
-                               auctionFees: auctionFees,
-                               salesFees: salesFees,
-                               sold: sold);
+        if (CarSell is not null)
+            return "This car is already put for sell!";
+
+        var carSell = CarSell.Create(car: this,
+                                     auction: auction,
+                                     auctionFees: auctionFees,
+                                     salesFees: salesFees);
+
+        CarSell = carSell;
 
         return carSell;
+    }
+
+    public Result<CarSell, string> MakeSold()
+    {
+        if (CarSell is null)
+            return "This car was not put for sell!";
+
+        CarSell.MakeSold();
+
+        return CarSell;
     }
 }
 

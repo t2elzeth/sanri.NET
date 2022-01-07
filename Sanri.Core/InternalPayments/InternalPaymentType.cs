@@ -1,4 +1,4 @@
-namespace Sanri.Core.Payments.Internal;
+namespace Sanri.Core.InternalPayments;
 
 public enum InternalPaymentPurpose
 {
@@ -9,9 +9,9 @@ public enum InternalPaymentPurpose
 
 public abstract class InternalPaymentType
 {
-    public string Name { get; set; }
+    public string Name { get; protected set; } = null!;
 
-    public InternalPaymentPurpose Purpose { get; set; }
+    public InternalPaymentPurpose Purpose { get; protected set; }
 }
 
 public class MonthlyPaymentType : InternalPaymentType
@@ -38,11 +38,11 @@ public class IncomeType : InternalPaymentType
     }
 }
 
-public class StaffExpenseType : InternalPaymentType
+public class EmployeeExpenseType : InternalPaymentType
 {
-    public static StaffExpenseType Create(string name)
+    public static EmployeeExpenseType Create(string name)
     {
-        var expenseType = new StaffExpenseType
+        var expenseType = new EmployeeExpenseType
         {
             Name    = name,
             Purpose = InternalPaymentPurpose.StaffExpense

@@ -5,11 +5,11 @@ namespace Sanri.Core.Car;
 
 public class CarTotal : ValueObject<CarTotal>
 {
-    public long Common { get; set; }
+    public long Common { get;  private set; }
 
-    public long Fob { get; set; }
+    public long Fob { get;  private set; }
 
-    public long Fob2 { get; set; }
+    public long Fob2 { get;  private set; }
 
     public static CarTotal Create(long price,
                                   long auctionFees,

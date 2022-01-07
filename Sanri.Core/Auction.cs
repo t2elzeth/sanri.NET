@@ -2,18 +2,18 @@ namespace Sanri.Core;
 
 public class AuctionParking
 {
-    public long First { get; set; }
+    public long First { get; private set; }
 
-    public long Second { get; set; }
+    public long Second { get; private set; }
 
-    public long Third { get; set; }
+    public long Third { get; private set; }
 
-    public long Fourth { get; set; }
+    public long Fourth { get; private set; }
 }
 
 public class Auction
 {
-    public string Name { get; set; }
+    public string Name { get; private set; } = null!;
 
-    public AuctionParking Parking { get; set; }
+    public AuctionParking Parking { get; private set; } = null!;
 }
