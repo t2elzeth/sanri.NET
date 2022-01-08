@@ -1,4 +1,3 @@
-using System;
 using Sanri.Core.Clients;
 
 namespace Sanri.Core.Payments;
@@ -9,9 +8,9 @@ public class Payment
 
     public DateTime Date { get; private set; }
 
-    public long JpySum { get; private set; }
+    public decimal JpySum { get; private set; }
 
-    public long UsaSum { get; private set; }
+    public decimal UsaSum { get; private set; }
 
     public decimal Rate { get; private set; }
 
@@ -27,14 +26,14 @@ public class Payment
 
     public static Payment Create(Client user,
                                  DateTime date,
-                                 long jpySum,
+                                 decimal jpySum,
+                                 decimal usaSum,
+                                 decimal rate,
                                  string sender,
                                  string comment,
                                  PaymentTransaction transaction,
                                  PaymentAction action,
-                                 PaymentPurpose purpose,
-                                 long usaSum,
-                                 long rate)
+                                 PaymentPurpose purpose)
     {
         var payment = new Payment
         {

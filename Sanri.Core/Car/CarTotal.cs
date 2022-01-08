@@ -1,15 +1,14 @@
-using System;
 using CSharpFunctionalExtensions;
 
 namespace Sanri.Core.Car;
 
 public class CarTotal : ValueObject<CarTotal>
 {
-    public long Common { get;  private set; }
+    public long Common { get; private set; }
 
-    public long Fob { get;  private set; }
+    public long Fob { get; private set; }
 
-    public long Fob2 { get;  private set; }
+    public long Fob2 { get; private set; }
 
     public static CarTotal Create(long price,
                                   long auctionFees,

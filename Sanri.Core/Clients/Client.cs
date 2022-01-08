@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using Sanri.Core.Payments;
 
 namespace Sanri.Core.Clients;
@@ -65,37 +63,14 @@ public class Client
         Payments            = new List<Payment>();
     }
 
-    public void Withdraw(DateTime date,
-                         long jpySum,
-                         string sender,
-                         string comment,
-                         PaymentTransaction transaction,
-                         PaymentPurpose purpose,
-                         long usaSum = 0,
-                         long rate = 0)
-    {
-        var payment = Payment.Create(user: this,
-                                     action: PaymentAction.Withdrawal,
-                                     date: date,
-                                     jpySum: jpySum,
-                                     usaSum: usaSum,
-                                     rate: rate,
-                                     sender: sender,
-                                     comment: comment,
-                                     transaction: transaction,
-                                     purpose: purpose);
-
-        Payments.Add(payment);
-    }
-
     public void Replenish(DateTime date,
-                          long jpySum,
+                          decimal jpySum,
                           string sender,
                           string comment,
                           PaymentTransaction transaction,
                           PaymentPurpose purpose,
-                          long usaSum = 0,
-                          long rate = 0)
+                          decimal usaSum = 0M,
+                          decimal rate = 0M)
     {
         var payment = Payment.Create(user: this,
                                      action: PaymentAction.Replenishment,
@@ -107,6 +82,29 @@ public class Client
                                      purpose: purpose,
                                      usaSum: usaSum,
                                      rate: rate);
+
+        Payments.Add(payment);
+    }
+
+    public void Withdraw(DateTime date,
+                         decimal jpySum,
+                         string sender,
+                         string comment,
+                         PaymentTransaction transaction,
+                         PaymentPurpose purpose,
+                         decimal usaSum = 0M,
+                         decimal rate = 0M)
+    {
+        var payment = Payment.Create(user: this,
+                                     action: PaymentAction.Withdrawal,
+                                     date: date,
+                                     jpySum: jpySum,
+                                     usaSum: usaSum,
+                                     rate: rate,
+                                     sender: sender,
+                                     comment: comment,
+                                     transaction: transaction,
+                                     purpose: purpose);
 
         Payments.Add(payment);
     }

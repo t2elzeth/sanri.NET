@@ -1,4 +1,3 @@
-using System;
 using Sanri.Core.Clients;
 using Sanri.Core.Payments;
 
@@ -46,16 +45,16 @@ public class Container
     {
         var container = new Container
         {
-            Owner = owner,
-            Name = name,
-            Date = date,
-            Commission = commission,
+            Owner                   = owner,
+            Name                    = name,
+            Date                    = date,
+            Commission              = commission,
             ContainerTransportation = containerTransportation,
-            PackagingMaterials = packagingMaterials,
-            Transport = transportation,
-            Loading = loading,
-            Status = status,
-            TotalAmount = totalAmount
+            PackagingMaterials      = packagingMaterials,
+            Transport               = transportation,
+            Loading                 = loading,
+            Status                  = status,
+            TotalAmount             = totalAmount
         };
 
         if (container.Status == ContainerStatus.Shipped)

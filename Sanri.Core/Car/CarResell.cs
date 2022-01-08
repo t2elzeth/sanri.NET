@@ -1,4 +1,3 @@
-using System;
 using Sanri.Core.Clients;
 using Sanri.Core.InternalPayments;
 using Sanri.Core.Payments;
@@ -38,7 +37,7 @@ public class CarResell
                                    comment: "Comment",
                                    transaction: PaymentTransaction.Cashless,
                                    purpose: PaymentPurpose.CarResell);
-        
+
         resell.NewClient.Withdraw(date: DateTime.Now,
                                   jpySum: car.GetTotal(),
                                   sender: "CarOrder",
@@ -47,7 +46,7 @@ public class CarResell
                                   purpose: PaymentPurpose.CarResell);
 
         if (resell.OldClient != Clients.Sanri.Instance) return resell;
-        
+
         var incomeType = IncomeType.Create("CarResale");
         var income = InternalPayments.Income.Create(incomeType: incomeType,
                                                     date: DateTime.Now,

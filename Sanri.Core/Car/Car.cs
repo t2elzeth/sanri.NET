@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using CSharpFunctionalExtensions;
 using Sanri.Core.Clients;
 using Sanri.Core.Payments;
@@ -53,9 +51,13 @@ public class Car
                              long recycle,
                              long transport,
                              long amount,
+                             long lotNumber,
                              Auction auction,
                              string vin,
                              TransportCompany transportCompany,
+                             long additionalExpenses,
+                             bool documentsGiven,
+                             CarNumberStatus numberStatus,
                              string comment,
                              CarTotal total)
     {
@@ -75,6 +77,10 @@ public class Car
             Total            = total,
             CarResells       = new List<CarResell>(),
             Fob              = owner.FobSize,
+            LotNumber = lotNumber,
+            AdditionalExpenses = additionalExpenses,
+            DocumentsGiven = documentsGiven,
+            NumberStatus = numberStatus
         };
 
         car.BuildTotal();
@@ -140,8 +146,8 @@ public class Car
     }
 
     public Result<CarSell, string> PutForSell(string auction,
-                                        long auctionFees,
-                                        long salesFees)
+                                              long auctionFees,
+                                              long salesFees)
     {
         if (CarSell is not null)
             return "This car is already put for sell!";

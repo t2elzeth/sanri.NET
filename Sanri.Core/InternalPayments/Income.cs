@@ -1,5 +1,3 @@
-using System;
-
 namespace Sanri.Core.InternalPayments;
 
 public class Income
