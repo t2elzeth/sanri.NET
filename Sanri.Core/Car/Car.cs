@@ -145,7 +145,7 @@ public class Car
         return carResell;
     }
 
-    public Result<CarSell, string> PutForSell(string auction,
+    public Result<CarSell, string> MakeForSell(string auction,
                                               long auctionFees,
                                               long salesFees)
     {
