@@ -63,42 +63,34 @@ public class Client
         Payments            = new List<Payment>();
     }
 
-    public void Replenish(decimal jpySum,
+    public void Replenish(PaymentSum sum,
                           string sender,
                           string comment,
                           PaymentTransaction transaction,
-                          PaymentPurpose purpose,
-                          decimal usaSum = 0M,
-                          decimal rate = 0M)
+                          PaymentPurpose purpose)
     {
         var payment = Payment.Create(user: this,
                                      action: PaymentAction.Replenishment,
                                      date: DateTime.Now, 
-                                     jpySum: jpySum,
+                                     sum: sum,
                                      sender: sender,
                                      comment: comment,
                                      transaction: transaction,
-                                     purpose: purpose,
-                                     usaSum: usaSum,
-                                     rate: rate);
+                                     purpose: purpose);
 
         Payments.Add(payment);
     }
 
-    public void Withdraw(decimal jpySum,
+    public void Withdraw(PaymentSum sum,
                          string sender,
                          string comment,
                          PaymentTransaction transaction,
-                         PaymentPurpose purpose,
-                         decimal usaSum = 0M,
-                         decimal rate = 0M)
+                         PaymentPurpose purpose)
     {
         var payment = Payment.Create(user: this,
                                      action: PaymentAction.Withdrawal,
                                      date: DateTime.Now,
-                                     jpySum: jpySum,
-                                     usaSum: usaSum,
-                                     rate: rate,
+                                     sum: sum,
                                      sender: sender,
                                      comment: comment,
                                      transaction: transaction,

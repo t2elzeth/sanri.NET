@@ -26,9 +26,7 @@ public class Payment
 
     public static Payment Create(Client user,
                                  DateTime date,
-                                 decimal jpySum,
-                                 decimal usaSum,
-                                 decimal rate,
+                                 PaymentSum sum,
                                  string sender,
                                  string comment,
                                  PaymentTransaction transaction,
@@ -39,14 +37,14 @@ public class Payment
         {
             User        = user,
             Date        = date,
-            JpySum      = jpySum,
+            JpySum      = sum.Jpy,
             Sender      = sender,
             Comment     = comment,
             Transaction = transaction,
             Action      = action,
             Purpose     = purpose,
-            UsaSum      = usaSum,
-            Rate        = rate
+            UsaSum      = sum.Usa,
+            Rate        = sum.Rate
         };
 
         return payment;

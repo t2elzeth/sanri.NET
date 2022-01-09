@@ -85,7 +85,7 @@ public class Car
 
         car.BuildTotal();
 
-        car.Owner.Withdraw(jpySum: car.GetTotal(),
+        car.Owner.Withdraw(sum: PaymentSum.Create(car.GetTotal()),
                            sender: "CarOrder",
                            comment: "Comment",
                            transaction: PaymentTransaction.Cashless,
@@ -94,8 +94,8 @@ public class Car
         if (car.Owner.PriceType != ClientPriceType.Fob2)
             return car;
 
-
-        Clients.Sanri.Instance.Withdraw(jpySum: car.Recycle + Convert.ToInt64(car.Price * 0.1),
+        var sanriPaymentSum = PaymentSum.Create(car.Recycle + Convert.ToDecimal(car.Price * 0.1));
+        Clients.Sanri.Instance.Withdraw(sum: sanriPaymentSum,
                                         sender: "CarOrder",
                                         comment: "Comment",
                                         transaction: PaymentTransaction.Cashless,
