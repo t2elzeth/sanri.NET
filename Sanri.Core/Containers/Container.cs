@@ -9,6 +9,21 @@ public enum ContainerStatus
     GoingTo = 2
 }
 
+public abstract class ContainerWheels
+{
+    public long Count { get; set; }
+
+    public decimal Amount { get; set; }
+}
+
+public class WheelRecycling : ContainerWheels
+{
+}
+
+public class WheelSales : ContainerWheels
+{
+}
+
 public class Container
 {
     public long Id { get; set; }
@@ -31,6 +46,11 @@ public class Container
     public ContainerStatus Status { get; set; }
 
     public long TotalAmount { get; set; }
+    
+    // todo: Create wheel sales and recycling
+    public WheelSales WheelSales { get; set; } = null!;
+
+    public WheelRecycling WheelRecycling { get; set; } = null!;
 
     public static Container Create(Client owner,
                                    string name,
@@ -58,16 +78,23 @@ public class Container
         };
 
         if (container.Status == ContainerStatus.Shipped)
-        {
-            var paymentSum = PaymentSum.Create(container.TotalAmount);
-
-            container.Owner.Withdraw(sum: paymentSum,
-                                     sender: "ContainerShipping",
-                                     comment: $"For shipping container #{container.Id}",
-                                     transaction: PaymentTransaction.Cashless,
-                                     purpose: PaymentPurpose.CarSell);
-        }
+            container.Ship();
 
         return container;
+    }
+
+    public void Ship()
+    {
+        if (Status == ContainerStatus.Shipped)
+            return;
+
+        Status = ContainerStatus.Shipped;
+
+        var paymentSum = PaymentSum.Create(TotalAmount);
+        Owner.Withdraw(sum: paymentSum,
+                       sender: "ContainerShipping",
+                       comment: $"For shipping container #{Id}",
+                       transaction: PaymentTransaction.Cashless,
+                       purpose: PaymentPurpose.CarSell);
     }
 }
