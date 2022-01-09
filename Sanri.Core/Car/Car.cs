@@ -117,13 +117,7 @@ public class Car
 
     private void BuildTotal()
     {
-        Total = CarTotal.Create(price: Price,
-                                auctionFees: AuctionFees,
-                                recycle: Recycle,
-                                transport: Transport,
-                                amount: Amount,
-                                fob: Fob,
-                                transportationLimit: Owner.TransportationLimit);
+        Total = CarTotal.Create(this);
     }
 
     public Result<CarResell, string> Resell(Client newClient, long sellPrice)
