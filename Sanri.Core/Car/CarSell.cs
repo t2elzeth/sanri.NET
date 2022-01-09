@@ -45,8 +45,7 @@ public class CarSell
 
     public void MakeSold()
     {
-        Car.Owner.Replenish(date: DateTime.Now,
-                            jpySum: Total,
+        Car.Owner.Replenish(jpySum: Total,
                             sender: "CarOrder",
                             comment: "Comment",
                             transaction: PaymentTransaction.Cashless,

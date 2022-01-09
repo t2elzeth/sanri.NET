@@ -63,30 +63,29 @@ public class Car
     {
         var car = new Car
         {
-            Owner            = owner,
-            Model            = model,
-            Price            = price,
-            AuctionFees      = auctionFees,
-            Recycle          = recycle,
-            Transport        = transport,
-            Amount           = amount,
-            Auction          = auction,
-            Vin              = vin,
-            TransportCompany = transportCompany,
-            Comment          = comment,
-            Total            = total,
-            CarResells       = new List<CarResell>(),
-            Fob              = owner.FobSize,
-            LotNumber = lotNumber,
+            Owner              = owner,
+            Model              = model,
+            Price              = price,
+            AuctionFees        = auctionFees,
+            Recycle            = recycle,
+            Transport          = transport,
+            Amount             = amount,
+            Auction            = auction,
+            Vin                = vin,
+            TransportCompany   = transportCompany,
+            Comment            = comment,
+            Total              = total,
+            CarResells         = new List<CarResell>(),
+            Fob                = owner.FobSize,
+            LotNumber          = lotNumber,
             AdditionalExpenses = additionalExpenses,
-            DocumentsGiven = documentsGiven,
-            NumberStatus = numberStatus
+            DocumentsGiven     = documentsGiven,
+            NumberStatus       = numberStatus
         };
 
         car.BuildTotal();
 
-        car.Owner.Withdraw(date: DateTime.Now,
-                           jpySum: car.GetTotal(),
+        car.Owner.Withdraw(jpySum: car.GetTotal(),
                            sender: "CarOrder",
                            comment: "Comment",
                            transaction: PaymentTransaction.Cashless,
@@ -96,8 +95,7 @@ public class Car
             return car;
 
 
-        Clients.Sanri.Instance.Withdraw(date: DateTime.Now,
-                                        jpySum: car.Recycle + Convert.ToInt64(car.Price * 0.1),
+        Clients.Sanri.Instance.Withdraw(jpySum: car.Recycle + Convert.ToInt64(car.Price * 0.1),
                                         sender: "CarOrder",
                                         comment: "Comment",
                                         transaction: PaymentTransaction.Cashless,
@@ -146,8 +144,8 @@ public class Car
     }
 
     public Result<CarSell, string> MakeForSell(string auction,
-                                              long auctionFees,
-                                              long salesFees)
+                                               long auctionFees,
+                                               long salesFees)
     {
         if (CarSell is not null)
             return "This car is already put for sell!";

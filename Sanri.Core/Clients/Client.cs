@@ -63,8 +63,7 @@ public class Client
         Payments            = new List<Payment>();
     }
 
-    public void Replenish(DateTime date,
-                          decimal jpySum,
+    public void Replenish(decimal jpySum,
                           string sender,
                           string comment,
                           PaymentTransaction transaction,
@@ -74,7 +73,7 @@ public class Client
     {
         var payment = Payment.Create(user: this,
                                      action: PaymentAction.Replenishment,
-                                     date: date,
+                                     date: DateTime.Now, 
                                      jpySum: jpySum,
                                      sender: sender,
                                      comment: comment,
@@ -86,8 +85,7 @@ public class Client
         Payments.Add(payment);
     }
 
-    public void Withdraw(DateTime date,
-                         decimal jpySum,
+    public void Withdraw(decimal jpySum,
                          string sender,
                          string comment,
                          PaymentTransaction transaction,
@@ -97,7 +95,7 @@ public class Client
     {
         var payment = Payment.Create(user: this,
                                      action: PaymentAction.Withdrawal,
-                                     date: date,
+                                     date: DateTime.Now,
                                      jpySum: jpySum,
                                      usaSum: usaSum,
                                      rate: rate,

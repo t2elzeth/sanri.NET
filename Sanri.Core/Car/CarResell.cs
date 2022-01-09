@@ -31,15 +31,13 @@ public class CarResell
 
         resell.BuildIncome();
 
-        resell.OldClient.Replenish(date: DateTime.Now,
-                                   jpySum: car.GetTotal(),
+        resell.OldClient.Replenish(jpySum: car.GetTotal(),
                                    sender: "CarOrder",
                                    comment: "Comment",
                                    transaction: PaymentTransaction.Cashless,
                                    purpose: PaymentPurpose.CarResell);
 
-        resell.NewClient.Withdraw(date: DateTime.Now,
-                                  jpySum: car.GetTotal(),
+        resell.NewClient.Withdraw(jpySum: car.GetTotal(),
                                   sender: "CarOrder",
                                   comment: "Comment",
                                   transaction: PaymentTransaction.Cashless,

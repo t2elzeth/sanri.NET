@@ -59,8 +59,7 @@ public class Container
 
         if (container.Status == ContainerStatus.Shipped)
         {
-            container.Owner.Withdraw(date: DateTime.Now,
-                                     jpySum: container.TotalAmount,
+            container.Owner.Withdraw(jpySum: container.TotalAmount,
                                      sender: "ContainerShipping",
                                      comment: $"For shipping container #{container.Id}",
                                      transaction: PaymentTransaction.Cashless,
