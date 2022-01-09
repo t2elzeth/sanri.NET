@@ -60,7 +60,7 @@ public class Container
         if (container.Status == ContainerStatus.Shipped)
         {
             var paymentSum = PaymentSum.Create(container.TotalAmount);
-            
+
             container.Owner.Withdraw(sum: paymentSum,
                                      sender: "ContainerShipping",
                                      comment: $"For shipping container #{container.Id}",

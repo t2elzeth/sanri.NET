@@ -1,6 +1,5 @@
 namespace Sanri.Core.Car;
 
-
 public class CarTotal
 {
     public long Common { get; private set; }

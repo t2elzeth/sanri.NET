@@ -45,7 +45,7 @@ public class CarSell
 
     public void MakeSold()
     {
-        Car.Owner.Replenish(sum: PaymentSum.Create(Total), 
+        Car.Owner.Replenish(sum: PaymentSum.Create(Total),
                             sender: "CarOrder",
                             comment: "Comment",
                             transaction: PaymentTransaction.Cashless,

@@ -8,7 +8,7 @@ public class Payment
 
     public DateTime Date { get; private set; }
 
-    public PaymentSum Sum { get; private set; }
+    public PaymentSum Sum { get; private set; } = null!;
 
     public string Sender { get; private set; } = null!;
 
@@ -31,9 +31,9 @@ public class Payment
     {
         var payment = new Payment
         {
-            User = user,
-            Date = date,
-            Sum  = sum,
+            User        = user,
+            Date        = date,
+            Sum         = sum,
             Sender      = sender,
             Comment     = comment,
             Transaction = transaction,

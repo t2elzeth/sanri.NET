@@ -71,7 +71,7 @@ public class Client
     {
         var payment = Payment.Create(user: this,
                                      action: PaymentAction.Replenishment,
-                                     date: DateTime.Now, 
+                                     date: DateTime.Now,
                                      sum: sum,
                                      sender: sender,
                                      comment: comment,
