@@ -38,11 +38,11 @@ public class IncomeType : InternalPaymentType
     }
 }
 
-public class EmployeeExpenseType : InternalPaymentType
+public class EmployeePaymentType : InternalPaymentType
 {
-    public static EmployeeExpenseType Create(string name)
+    public static EmployeePaymentType Create(string name)
     {
-        var expenseType = new EmployeeExpenseType
+        var expenseType = new EmployeePaymentType
         {
             Name    = name,
             Purpose = InternalPaymentPurpose.StaffExpense

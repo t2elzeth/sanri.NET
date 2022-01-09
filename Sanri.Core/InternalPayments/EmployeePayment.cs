@@ -1,10 +1,10 @@
 namespace Sanri.Core.InternalPayments;
 
-public class EmployeeExpense
+public class EmployeePayment
 {
     public Employee Member { get; private set; } = null!;
 
-    public EmployeeExpenseType ExpenseType { get; private set; } = null!;
+    public EmployeePaymentType PaymentType { get; private set; } = null!;
 
     public DateOnly Date { get; private set; }
 
