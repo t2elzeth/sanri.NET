@@ -8,11 +8,7 @@ public class Payment
 
     public DateTime Date { get; private set; }
 
-    public decimal JpySum { get; private set; }
-
-    public decimal UsaSum { get; private set; }
-
-    public decimal Rate { get; private set; }
+    public PaymentSum Sum { get; private set; }
 
     public string Sender { get; private set; } = null!;
 
@@ -35,16 +31,14 @@ public class Payment
     {
         var payment = new Payment
         {
-            User        = user,
-            Date        = date,
-            JpySum      = sum.Jpy,
+            User = user,
+            Date = date,
+            Sum  = sum,
             Sender      = sender,
             Comment     = comment,
             Transaction = transaction,
             Action      = action,
             Purpose     = purpose,
-            UsaSum      = sum.Usa,
-            Rate        = sum.Rate
         };
 
         return payment;
