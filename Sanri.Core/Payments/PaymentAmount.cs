@@ -1,6 +1,6 @@
 namespace Sanri.Core.Payments;
 
-public class PaymentSum
+public class PaymentAmount
 {
     public decimal Jpy { get; set; }
 
@@ -8,9 +8,9 @@ public class PaymentSum
 
     public decimal Rate { get; set; }
 
-    public static PaymentSum Create(decimal jpy)
+    public static PaymentAmount Create(decimal jpy)
     {
-        var paymentSum = new PaymentSum
+        var paymentSum = new PaymentAmount
         {
             Jpy  = jpy,
             Usa  = 0M,
@@ -20,11 +20,11 @@ public class PaymentSum
         return paymentSum;
     }
 
-    public static PaymentSum Create(decimal jpy,
-                                    decimal usa,
-                                    decimal rate)
+    public static PaymentAmount Create(decimal jpy,
+                                       decimal usa,
+                                       decimal rate)
     {
-        var paymentSum = new PaymentSum
+        var paymentSum = new PaymentAmount
         {
             Jpy  = jpy,
             Usa  = usa,

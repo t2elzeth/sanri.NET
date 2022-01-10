@@ -8,7 +8,7 @@ public class Payment
 
     public DateTime Date { get; private set; }
 
-    public PaymentSum Sum { get; private set; } = null!;
+    public PaymentAmount Amount { get; private set; } = null!;
 
     public string Sender { get; private set; } = null!;
 
@@ -22,7 +22,7 @@ public class Payment
 
     public static Payment Create(Client user,
                                  DateTime date,
-                                 PaymentSum sum,
+                                 PaymentAmount amount,
                                  string sender,
                                  string comment,
                                  PaymentTransaction transaction,
@@ -33,7 +33,7 @@ public class Payment
         {
             User        = user,
             Date        = date,
-            Sum         = sum,
+            Amount      = amount,
             Sender      = sender,
             Comment     = comment,
             Transaction = transaction,

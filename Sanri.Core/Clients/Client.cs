@@ -63,7 +63,7 @@ public class Client
         Payments            = new List<Payment>();
     }
 
-    public void Replenish(PaymentSum sum,
+    public void Replenish(PaymentAmount amount,
                           string sender,
                           string comment,
                           PaymentTransaction transaction,
@@ -72,7 +72,7 @@ public class Client
         var payment = Payment.Create(user: this,
                                      action: PaymentAction.Replenishment,
                                      date: DateTime.Now,
-                                     sum: sum,
+                                     amount: amount,
                                      sender: sender,
                                      comment: comment,
                                      transaction: transaction,
@@ -81,7 +81,7 @@ public class Client
         Payments.Add(payment);
     }
 
-    public void Withdraw(PaymentSum sum,
+    public void Withdraw(PaymentAmount amount,
                          string sender,
                          string comment,
                          PaymentTransaction transaction,
@@ -90,7 +90,7 @@ public class Client
         var payment = Payment.Create(user: this,
                                      action: PaymentAction.Withdrawal,
                                      date: DateTime.Now,
-                                     sum: sum,
+                                     amount: amount,
                                      sender: sender,
                                      comment: comment,
                                      transaction: transaction,

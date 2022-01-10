@@ -46,7 +46,7 @@ public class Container
     public ContainerStatus Status { get; set; }
 
     public long TotalAmount { get; set; }
-    
+
     // todo: Create wheel sales and recycling
     public WheelSales WheelSales { get; set; } = null!;
 
@@ -90,8 +90,8 @@ public class Container
 
         Status = ContainerStatus.Shipped;
 
-        var paymentSum = PaymentSum.Create(TotalAmount);
-        Owner.Withdraw(sum: paymentSum,
+        var paymentSum = PaymentAmount.Create(TotalAmount);
+        Owner.Withdraw(amount: paymentSum,
                        sender: "ContainerShipping",
                        comment: $"For shipping container #{Id}",
                        transaction: PaymentTransaction.Cashless,

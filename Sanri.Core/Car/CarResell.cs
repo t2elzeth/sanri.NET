@@ -31,13 +31,13 @@ public class CarResell
 
         resell.BuildIncome();
 
-        resell.OldClient.Replenish(sum: PaymentSum.Create(car.GetTotal()),
+        resell.OldClient.Replenish(amount: PaymentAmount.Create(car.GetTotal()),
                                    sender: "CarOrder",
                                    comment: "Comment",
                                    transaction: PaymentTransaction.Cashless,
                                    purpose: PaymentPurpose.CarResell);
 
-        resell.NewClient.Withdraw(sum: PaymentSum.Create(car.GetTotal()),
+        resell.NewClient.Withdraw(amount: PaymentAmount.Create(car.GetTotal()),
                                   sender: "CarOrder",
                                   comment: "Comment",
                                   transaction: PaymentTransaction.Cashless,
