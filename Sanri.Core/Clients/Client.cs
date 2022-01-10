@@ -23,8 +23,6 @@ public class Client
 
     public string Password { get; protected set; }
 
-    public long Balance { get; private set; }
-
     public string Country { get; private set; }
 
     public string Email { get; private set; }
@@ -39,27 +37,32 @@ public class Client
 
     public long TransportationLimit { get; private set; }
 
+    public long Balance { get; private set; }
+
     public List<Payment> Payments { get; private set; }
 
-    public Client(string country,
-                  string email,
-                  string phoneNumber,
-                  string fullName,
+    public Client(string fullName,
                   string username,
                   string password,
-                  long balance = 0,
+                  string country,
+                  string email,
+                  string phoneNumber,
+                  long fobSize,
+                  ClientServiceType service = ClientServiceType.Entire,
                   ClientPriceType priceType = ClientPriceType.Fact,
                   long transportationLimit = 6000)
     {
-        Country             = country;
-        Email               = email;
-        PhoneNumber         = phoneNumber;
         FullName            = fullName;
         Username            = username;
         Password            = password;
-        Balance             = balance;
+        Country             = country;
+        Email               = email;
+        PhoneNumber         = phoneNumber;
+        FobSize             = fobSize;
+        Service             = service;
         PriceType           = priceType;
         TransportationLimit = transportationLimit;
+        Balance             = 0;
         Payments            = new List<Payment>();
     }
 

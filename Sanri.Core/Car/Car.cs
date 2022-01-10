@@ -106,13 +106,7 @@ public class Car
 
     public long GetTotal()
     {
-        return Owner.PriceType switch
-        {
-            ClientPriceType.Fact => Total.Common,
-            ClientPriceType.Fob => Total.Fob,
-            ClientPriceType.Fob2 => Total.Fob2,
-            _ => 0
-        };
+        return Total.Value;
     }
 
     private void BuildTotal()
