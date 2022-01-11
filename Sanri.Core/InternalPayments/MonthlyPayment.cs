@@ -1,12 +1,14 @@
+using Sanri.Core.Containers;
+
 namespace Sanri.Core.InternalPayments;
 
 public class MonthlyPayment
 {
+    public Container FromContainer { get; private set; } = null!;
+
     public MonthlyPaymentType PaymentType { get; private set; } = null!;
 
-    public DateTime Date { get; private set; }
-
-    public long FromContainer { get; private set; }
+    public DateOnly Date { get; private set; }
 
     public long Amount { get; private set; }
 
