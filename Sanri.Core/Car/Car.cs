@@ -10,13 +10,17 @@ public class Car
 
     public Auction Auction { get; private set; } = null!;
 
-    public long LotNumber { get; private set; }
-
     public Model Model { get; private set; } = null!;
+
+    public TransportCompany TransportCompany { get; private set; } = null!;
+
+    public CarNumberStatus NumberStatus { get; private set; }
+
+    public long Price { get; private set; }
 
     public string Vin { get; private set; } = null!;
 
-    public long Price { get; private set; }
+    public long LotNumber { get; private set; }
 
     public long AuctionFees { get; private set; }
 
@@ -26,17 +30,13 @@ public class Car
 
     public long Amount { get; private set; }
 
-    public long Fob { get; private set; }
-
-    public TransportCompany TransportCompany { get; private set; } = null!;
-
-    public CarNumberStatus NumberStatus { get; private set; }
+    public long AdditionalExpenses { get; private set; }
 
     public bool DocumentsGiven { get; private set; }
 
     public string Comment { get; private set; } = null!;
 
-    public long AdditionalExpenses { get; private set; }
+    public long Fob { get; private set; }
 
     public CarTotal Total { get; private set; } = null!;
 
@@ -44,44 +44,42 @@ public class Car
 
     public List<CarResell> CarResells { get; private set; } = null!;
 
-    public static Car Create(Client owner,
-                             ISanriRepository sanriRepository,
+    public static Car Create(ISanriRepository sanriRepository,
+                             Client owner,
+                             Auction auction,
                              Model model,
+                             TransportCompany transportCompany,
+                             CarNumberStatus numberStatus,
                              long price,
+                             string vin,
+                             long lotNumber,
                              long auctionFees,
                              long recycle,
                              long transport,
                              long amount,
-                             long lotNumber,
-                             Auction auction,
-                             string vin,
-                             TransportCompany transportCompany,
                              long additionalExpenses,
                              bool documentsGiven,
-                             CarNumberStatus numberStatus,
-                             string comment,
-                             CarTotal total)
+                             string comment)
     {
         var car = new Car
         {
             Owner              = owner,
+            Auction            = auction,
             Model              = model,
+            TransportCompany   = transportCompany,
+            NumberStatus       = numberStatus,
             Price              = price,
+            Vin                = vin,
+            LotNumber          = lotNumber,
             AuctionFees        = auctionFees,
             Recycle            = recycle,
             Transport          = transport,
             Amount             = amount,
-            Auction            = auction,
-            Vin                = vin,
-            TransportCompany   = transportCompany,
-            Comment            = comment,
-            Total              = total,
-            CarResells         = new List<CarResell>(),
-            Fob                = owner.FobSize,
-            LotNumber          = lotNumber,
             AdditionalExpenses = additionalExpenses,
             DocumentsGiven     = documentsGiven,
-            NumberStatus       = numberStatus
+            Comment            = comment,
+            Fob                = owner.FobSize,
+            CarResells         = new List<CarResell>()
         };
 
         car.BuildTotal();
