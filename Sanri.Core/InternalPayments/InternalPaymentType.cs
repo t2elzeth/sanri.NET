@@ -28,6 +28,8 @@ public class MonthlyPaymentType : InternalPaymentType
 
 public class IncomeType : InternalPaymentType
 {
+    public static IncomeType CarResell = IncomeType.Create("CarResell");
+    
     public static IncomeType Create(string name)
     {
         return new IncomeType

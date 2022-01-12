@@ -45,6 +45,7 @@ public class Car
     public List<CarResell> CarResells { get; private set; } = null!;
 
     public static Car Create(Client owner,
+                             ISanriRepository sanriRepository,
                              Model model,
                              long price,
                              long auctionFees,
@@ -95,11 +96,12 @@ public class Car
             return car;
 
         var sanriPaymentSum = PaymentAmount.Create(car.Recycle + Convert.ToDecimal(car.Price * 0.1));
-        Clients.Sanri.Instance.Withdraw(amount: sanriPaymentSum,
-                                        sender: "CarOrder",
-                                        comment: "Comment",
-                                        transaction: PaymentTransaction.Cashless,
-                                        purpose: PaymentPurpose.CarOrder);
+        var sanri           = sanriRepository.Get();
+        sanri.Withdraw(amount: sanriPaymentSum,
+                       sender: "CarOrder",
+                       comment: "Comment",
+                       transaction: PaymentTransaction.Cashless,
+                       purpose: PaymentPurpose.CarOrder);
 
         return car;
     }
@@ -114,12 +116,13 @@ public class Car
         Total = CarTotal.Create(this);
     }
 
-    public Result<CarResell, string> Resell(Client newClient, long sellPrice)
+    public Result<CarResell, string> Resell(Client newClient, ISanriRepository sanriRepository, long sellPrice)
     {
         if (Owner == newClient)
             return "Client can not resell to himself";
 
         var carResell = CarResell.Create(car: this,
+                                         sanriRepository: sanriRepository,
                                          newClient: newClient,
                                          salePrice: sellPrice);
 

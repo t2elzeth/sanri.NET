@@ -18,7 +18,10 @@ public class CarResell
 
     public long Income { get; private set; }
 
-    public static CarResell Create(Car car, Client newClient, long salePrice)
+    public static CarResell Create(Car car,
+                                   Client newClient,
+                                   ISanriRepository sanriRepository,
+                                   long salePrice)
     {
         var resell = new CarResell
         {
@@ -43,10 +46,10 @@ public class CarResell
                                   transaction: PaymentTransaction.Cashless,
                                   purpose: PaymentPurpose.CarResell);
 
-        if (resell.OldClient != Clients.Sanri.Instance) return resell;
+        var sanri = sanriRepository.Get();
+        if (resell.OldClient != sanri) return resell;
 
-        var incomeType = IncomeType.Create("CarResale");
-        var income = InternalPayments.Income.Create(incomeType: incomeType,
+        var income = InternalPayments.Income.Create(incomeType: IncomeType.CarResell,
                                                     date: DateTime.Now,
                                                     amount: resell.Income,
                                                     comment: "For resell of car");
