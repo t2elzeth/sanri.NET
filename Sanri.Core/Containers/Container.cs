@@ -47,7 +47,6 @@ public class Container
 
     public long TotalAmount { get; set; }
 
-    // todo: Create wheel sales and recycling
     public WheelSales WheelSales { get; set; } = null!;
 
     public WheelRecycling WheelRecycling { get; set; } = null!;
